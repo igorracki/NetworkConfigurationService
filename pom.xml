@@ -19,7 +19,7 @@
     </licenses>
 
     <properties>
-        <wildfly-home>/home/user/wildfly</wildfly-home>
+        <wildfly-home>${project.basedir}/tools/wildfly</wildfly-home>
         <wildfly-hostname>127.0.0.1</wildfly-hostname>
         <wildfly-port>9990</wildfly-port>
         <wildfly-username>admin</wildfly-username>
