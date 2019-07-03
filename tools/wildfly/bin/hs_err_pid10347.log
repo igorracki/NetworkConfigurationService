@@ -1,0 +1,1406 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 16781312 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2756), pid=10347, tid=0x00007f96dcf2b700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_212-b03) (build 1.8.0_212-8u212-b03-0ubuntu1.18.04.1-b03)
+# Java VM: OpenJDK 64-Bit Server VM (25.212-b03 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f96d8070800):  VMThread [stack: 0x00007f96dce2c000,0x00007f96dcf2c000] [id=10357]
+
+Stack: [0x00007f96dce2c000,0x00007f96dcf2c000],  sp=0x00007f96dcf2a040,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xab46a2]
+V  [libjvm.so+0x4db6b7]
+V  [libjvm.so+0x8ef7b0]
+V  [libjvm.so+0x8e68ce]
+V  [libjvm.so+0xab0e70]
+V  [libjvm.so+0x5e2b9d]
+V  [libjvm.so+0x5e3b23]
+V  [libjvm.so+0x5cf116]
+V  [libjvm.so+0x4e3536]
+V  [libjvm.so+0x6305fd]
+V  [libjvm.so+0x9ccc3f]
+V  [libjvm.so+0x4e0340]
+V  [libjvm.so+0x5cd79b]
+V  [libjvm.so+0x4e1f70]
+V  [libjvm.so+0x5ce6df]
+V  [libjvm.so+0x45a46c]
+V  [libjvm.so+0xab55ef]
+V  [libjvm.so+0xabaea6]
+V  [libjvm.so+0xab91e5]
+V  [libjvm.so+0xab9abd]
+V  [libjvm.so+0xab9e97]
+V  [libjvm.so+0x8ecb42]
+
+VM_Operation (0x00007f96a721c360): GenCollectForAllocation, mode: safepoint, requested by thread 0x00007f96c4188000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f96b4113000 JavaThread "ServerService Thread Pool -- 85" [_thread_blocked, id=10564, stack(0x00007f969b1d9000,0x00007f969b2da000)]
+  0x00007f96b0221000 JavaThread "management-handler-thread - 2" [_thread_blocked, id=10554, stack(0x00007f969b2da000,0x00007f969b3db000)]
+  0x00007f96ad437000 JavaThread "management-handler-thread - 1" [_thread_blocked, id=10553, stack(0x00007f969b3db000,0x00007f969b4dc000)]
+  0x0000556cae5da000 JavaThread "management task-3" [_thread_blocked, id=10552, stack(0x00007f969b4dc000,0x00007f969b5dd000)]
+  0x00007f96b8bf1000 JavaThread "management task-2" [_thread_blocked, id=10551, stack(0x00007f969b5dd000,0x00007f969b6de000)]
+  0x00007f96b8bef800 JavaThread "management task-1" [_thread_blocked, id=10550, stack(0x00007f969b6de000,0x00007f969b7df000)]
+  0x00007f96b8c91800 JavaThread "SecurityDomain ThreadGroup - 1" [_thread_blocked, id=10549, stack(0x00007f969b7df000,0x00007f969b8e0000)]
+  0x00007f96b01fe800 JavaThread "Thread-29 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10546, stack(0x00007f969b8e0000,0x00007f969b9e1000)]
+  0x00007f96b01fc800 JavaThread "Thread-28 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10545, stack(0x00007f969b9e1000,0x00007f969bae2000)]
+  0x00007f96b01fa800 JavaThread "Thread-27 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10544, stack(0x00007f969bae2000,0x00007f969bbe3000)]
+  0x00007f96b01f9000 JavaThread "Thread-26 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10543, stack(0x00007f969bbe3000,0x00007f969bce4000)]
+  0x0000556cae5d1000 JavaThread "Thread-25 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10542, stack(0x00007f969bce4000,0x00007f969bde5000)]
+  0x0000556cae5cf000 JavaThread "Thread-24 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10541, stack(0x00007f969bde5000,0x00007f969bee6000)]
+  0x0000556cae5cd800 JavaThread "Thread-23 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10540, stack(0x00007f969bee6000,0x00007f969bfe7000)]
+  0x0000556cae5cb800 JavaThread "Thread-22 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10539, stack(0x00007f969bfe7000,0x00007f969c0e8000)]
+  0x0000556cae5ca000 JavaThread "Thread-21 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10538, stack(0x00007f969c0e8000,0x00007f969c1e9000)]
+  0x0000556cae5c9000 JavaThread "Thread-20 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10537, stack(0x00007f969c1e9000,0x00007f969c2ea000)]
+  0x00007f96b01f6800 JavaThread "Thread-19 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10536, stack(0x00007f969c2ea000,0x00007f969c3eb000)]
+  0x00007f96b01f5000 JavaThread "Thread-18 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10535, stack(0x00007f969c3eb000,0x00007f969c4ec000)]
+  0x00007f96b01f3000 JavaThread "Thread-17 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10534, stack(0x00007f969c4ec000,0x00007f969c5ed000)]
+  0x00007f96b01f1800 JavaThread "Thread-16 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10533, stack(0x00007f969c5ed000,0x00007f969c6ee000)]
+  0x00007f96b01ef800 JavaThread "Thread-15 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10532, stack(0x00007f969c6ee000,0x00007f969c7ef000)]
+  0x00007f96b01ed800 JavaThread "Thread-14 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10531, stack(0x00007f969c7ef000,0x00007f969c8f0000)]
+  0x00007f96b8789000 JavaThread "Thread-7 (ActiveMQ-client-global-threads)" daemon [_thread_blocked, id=10530, stack(0x00007f969c8f0000,0x00007f969c9f1000)]
+  0x00007f96b01ec000 JavaThread "Thread-13 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10529, stack(0x00007f969c9f1000,0x00007f969caf2000)]
+  0x00007f96c4bca000 JavaThread "Thread-6 (ActiveMQ-client-global-threads)" daemon [_thread_blocked, id=10528, stack(0x00007f969caf2000,0x00007f969cbf3000)]
+  0x00007f96b01ea000 JavaThread "Thread-12 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10527, stack(0x00007f969cbf3000,0x00007f969ccf4000)]
+  0x00007f96b8786800 JavaThread "Thread-5 (ActiveMQ-client-global-threads)" daemon [_thread_blocked, id=10526, stack(0x00007f969ccf4000,0x00007f969cdf5000)]
+  0x00007f96b01e8000 JavaThread "Thread-11 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10525, stack(0x00007f969cdf5000,0x00007f969cef6000)]
+  0x00007f96c4bc8800 JavaThread "Thread-4 (ActiveMQ-client-global-threads)" daemon [_thread_blocked, id=10524, stack(0x00007f969cef6000,0x00007f969cff7000)]
+  0x00007f96b01e6000 JavaThread "Thread-10 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10523, stack(0x00007f969cff7000,0x00007f969d0f8000)]
+  0x00007f96b91ed800 JavaThread "Thread-1 (ActiveMQ-remoting-threads-ActiveMQServerImpl::serverUUID=b88bc5c7-885b-11e9-99b7-080027c4ce44-1603720644)" [_thread_blocked, id=10522, stack(0x00007f969d0f8000,0x00007f969d1f9000)]
+  0x00007f96b973d000 JavaThread "Thread-3 (ActiveMQ-client-global-threads)" daemon [_thread_blocked, id=10521, stack(0x00007f969d1f9000,0x00007f969d2fa000)]
+  0x00007f96b01e4000 JavaThread "Thread-9 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10520, stack(0x00007f969d2fa000,0x00007f969d3fb000)]
+  0x00007f96c034a800 JavaThread "Thread-7 (org.apache.activemq.artemis.core.remoting.impl.invm.InVMConnector)" [_thread_blocked, id=10519, stack(0x00007f969d3fb000,0x00007f969d4fc000)]
+  0x00007f96b01e2800 JavaThread "Thread-8 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10518, stack(0x00007f969d6fc000,0x00007f969d7fd000)]
+  0x00007f96b9692800 JavaThread "Thread-6 (org.apache.activemq.artemis.core.remoting.impl.invm.InVMConnector)" [_thread_blocked, id=10517, stack(0x00007f969d7fd000,0x00007f969d8fe000)]
+  0x00007f96b01e1000 JavaThread "Thread-7 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10516, stack(0x00007f969d8fe000,0x00007f969d9ff000)]
+  0x00007f96b01de800 JavaThread "Thread-5 (org.apache.activemq.artemis.core.remoting.impl.invm.InVMConnector)" [_thread_blocked, id=10515, stack(0x00007f969d9ff000,0x00007f969db00000)]
+  0x00007f96b01dc800 JavaThread "Thread-6 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10514, stack(0x00007f969db00000,0x00007f969dc01000)]
+  0x00007f96b01db000 JavaThread "Thread-4 (org.apache.activemq.artemis.core.remoting.impl.invm.InVMConnector)" [_thread_blocked, id=10513, stack(0x00007f969dc01000,0x00007f969dd02000)]
+  0x00007f96c4be3000 JavaThread "Thread-2 (ActiveMQ-client-global-threads)" daemon [_thread_blocked, id=10511, stack(0x00007f969dd02000,0x00007f969de03000)]
+  0x00007f96bc1ff800 JavaThread "Thread-3 (org.apache.activemq.artemis.core.remoting.impl.invm.InVMConnector)" [_thread_blocked, id=10510, stack(0x00007f969de03000,0x00007f969df04000)]
+  0x00007f96b00d3800 JavaThread "Thread-5 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10509, stack(0x00007f969df04000,0x00007f969e005000)]
+  0x00007f96b00d3000 JavaThread "Thread-2 (org.apache.activemq.artemis.core.remoting.impl.invm.InVMConnector)" [_thread_blocked, id=10508, stack(0x00007f96aafd1000,0x00007f96ab1d2000)]
+  0x00007f96c0195000 JavaThread "default task-1" [_thread_blocked, id=10507, stack(0x00007f969e005000,0x00007f969e106000)]
+  0x00007f96c0193000 JavaThread "default-threads - 1" [_thread_blocked, id=10506, stack(0x00007f969e106000,0x00007f969e207000)]
+  0x00007f96d84ba000 JavaThread "expiration-thread--p3-t1" daemon [_thread_blocked, id=10505, stack(0x00007f969e207000,0x00007f969e308000)]
+  0x00007f96b81ad000 JavaThread "Thread-4 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10504, stack(0x00007f969e809000,0x00007f969e90a000)]
+  0x00007f96bc0dd000 JavaThread "ServerService Thread Pool -- 84" [_thread_blocked, id=10503, stack(0x00007f969e708000,0x00007f969e809000)]
+  0x00007f96b402f800 JavaThread "Thread-1 (ActiveMQ-client-global-threads)" daemon [_thread_blocked, id=10500, stack(0x00007f969e90a000,0x00007f969ea0b000)]
+  0x00007f96b402e800 JavaThread "Thread-0 (ActiveMQ-client-global-threads)" daemon [_thread_blocked, id=10499, stack(0x00007f969ea0b000,0x00007f969eb0c000)]
+  0x00007f96b8fbf000 JavaThread "Thread-1 (org.apache.activemq.artemis.core.remoting.impl.invm.InVMConnector)" [_thread_blocked, id=10498, stack(0x00007f969eb0c000,0x00007f969ec0d000)]
+  0x00007f96b00fb000 JavaThread "Thread-3 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10497, stack(0x00007f969ec0d000,0x00007f969ed0e000)]
+  0x00007f96b0170800 JavaThread "Thread-0 (org.apache.activemq.artemis.core.remoting.impl.invm.InVMConnector)" [_thread_blocked, id=10496, stack(0x00007f969ed0e000,0x00007f969ee0f000)]
+  0x00007f96ad516000 JavaThread "Thread-0 (ActiveMQ-remoting-threads-ActiveMQServerImpl::serverUUID=b88bc5c7-885b-11e9-99b7-080027c4ce44-1603720644)" [_thread_blocked, id=10495, stack(0x00007f969ee0f000,0x00007f969ef10000)]
+  0x00007f96ad476000 JavaThread "ServerService Thread Pool -- 83" [_thread_blocked, id=10493, stack(0x00007f969f211000,0x00007f969f312000)]
+  0x0000556cae527000 JavaThread "Thread-4 (ActiveMQ-scheduled-threads)" [_thread_blocked, id=10490, stack(0x00007f969f922000,0x00007f969fa23000)]
+  0x0000556cae523000 JavaThread "Thread-3 (ActiveMQ-scheduled-threads)" [_thread_blocked, id=10489, stack(0x00007f969fa23000,0x00007f969fb24000)]
+  0x0000556cae521800 JavaThread "activemq-failure-check-thread" [_thread_blocked, id=10488, stack(0x00007f969fb24000,0x00007f969fc25000)]
+  0x0000556cae3ef000 JavaThread "Thread-2 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10487, stack(0x00007f969fc25000,0x00007f969fd26000)]
+  0x0000556cae3d4000 JavaThread "Thread-1 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10486, stack(0x00007f969fd26000,0x00007f969fe27000)]
+  0x0000556cae3e0800 JavaThread "Thread-0 (ActiveMQ-server-org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl$5@5250ddda)" [_thread_blocked, id=10485, stack(0x00007f96a0e2a000,0x00007f96a0f2b000)]
+  0x00007f96b8a11000 JavaThread "Thread-2 (ActiveMQ-scheduled-threads)" [_thread_blocked, id=10484, stack(0x00007f96a0c28000,0x00007f96a0d29000)]
+  0x00007f96b81a2800 JavaThread "Thread-1 (ActiveMQ-scheduled-threads)" [_thread_blocked, id=10483, stack(0x00007f96a0d29000,0x00007f96a0e2a000)]
+  0x0000556cae284800 JavaThread "Thread-0 (ActiveMQ-scheduled-threads)" [_thread_blocked, id=10479, stack(0x00007f96a112b000,0x00007f96a122c000)]
+  0x0000556cae283000 JavaThread "activemq-buffer-timeout" [_thread_blocked, id=10478, stack(0x00007f96a122c000,0x00007f96a132d000)]
+  0x0000556cae018800 JavaThread "Thread-0 (-scheduled-threads)" [_thread_blocked, id=10477, stack(0x00007f96a172d000,0x00007f96a182e000)]
+  0x00007f96b9ae5800 JavaThread "Reference Reaper #3" daemon [_thread_blocked, id=10475, stack(0x00007f96a1b2f000,0x00007f96a1c30000)]
+  0x00007f96b9ef2000 JavaThread "Reference Reaper #2" daemon [_thread_blocked, id=10474, stack(0x00007f96a1f2c000,0x00007f96a202d000)]
+  0x00007f96b9ef1000 JavaThread "Reference Reaper #1" daemon [_thread_blocked, id=10473, stack(0x00007f96a202d000,0x00007f96a212e000)]
+  0x00007f96acd32800 JavaThread "SelectorThread" daemon [_thread_in_native, id=10471, stack(0x00007f96a212e000,0x00007f96a222f000)]
+  0x00007f96acc22800 JavaThread "ORB Run Thread" [_thread_blocked, id=10470, stack(0x00007f96a2431000,0x00007f96a2532000)]
+  0x00007f96b96b1800 JavaThread "Transaction Reaper Worker 0" daemon [_thread_blocked, id=10469, stack(0x00007f96a275f000,0x00007f96a2860000)]
+  0x00007f96b8a57000 JavaThread "Transaction Reaper" daemon [_thread_blocked, id=10468, stack(0x00007f96a2860000,0x00007f96a2961000)]
+  0x00007f96b9333800 JavaThread "Periodic Recovery" [_thread_blocked, id=10467, stack(0x00007f96a2961000,0x00007f96a2a62000)]
+  0x00007f96b96ae800 JavaThread "Transaction Expired Entry Monitor" daemon [_thread_blocked, id=10466, stack(0x00007f96a2a62000,0x00007f96a2b63000)]
+  0x00007f96b83ab000 JavaThread "XNIO-1 Accept" daemon [_thread_in_native, id=10465, stack(0x00007f96a2b79000,0x00007f96a2c7a000)]
+  0x00007f96b8851000 JavaThread "XNIO-1 I/O-1" daemon [_thread_in_native, id=10464, stack(0x00007f96a2c7a000,0x00007f96a2d7b000)]
+  0x00007f96ac1df800 JavaThread "Timer-1" [_thread_blocked, id=10463, stack(0x00007f96a317b000,0x00007f96a327c000)]
+  0x00007f96acb80000 JavaThread "Timer-0" [_thread_blocked, id=10462, stack(0x00007f96a39c7000,0x00007f96a3ac8000)]
+  0x00007f96acb7e000 JavaThread "ConnectionValidator" daemon [_thread_blocked, id=10461, stack(0x00007f96a3ac8000,0x00007f96a3bc9000)]
+  0x00007f96acb7c000 JavaThread "IdleRemover" daemon [_thread_blocked, id=10460, stack(0x00007f96a3bc9000,0x00007f96a3cca000)]
+  0x00007f96b8471800 JavaThread "default Accept" [_thread_in_native, id=10459, stack(0x00007f96a3ef0000,0x00007f96a3ff1000)]
+  0x00007f96b8470000 JavaThread "default I/O-2" [_thread_in_native, id=10458, stack(0x00007f96a3ff1000,0x00007f96a40f2000)]
+  0x00007f96b85df000 JavaThread "default I/O-1" [_thread_in_native, id=10457, stack(0x00007f96a40f2000,0x00007f96a41f3000)]
+  0x00007f96b8f8d800 JavaThread "management Accept" [_thread_in_native, id=10452, stack(0x00007f96a47f7000,0x00007f96a48f8000)]
+  0x00007f96b8ccc000 JavaThread "management I/O-2" [_thread_blocked, id=10451, stack(0x00007f96a48f8000,0x00007f96a49f9000)]
+  0x00007f96b80d3000 JavaThread "management I/O-1" [_thread_in_native, id=10450, stack(0x00007f96a49f9000,0x00007f96a4afa000)]
+  0x00007f96ac668800 JavaThread "ServerService Thread Pool -- 42" [_thread_blocked, id=10416, stack(0x00007f96a6e1b000,0x00007f96a6f1c000)]
+  0x00007f96b00b8800 JavaThread "DeploymentScanner-threads - 2" [_thread_blocked, id=10413, stack(0x00007f96a701d000,0x00007f96a711e000)]
+  0x00007f96c4188000 JavaThread "DeploymentScanner-threads - 1" [_thread_blocked, id=10412, stack(0x00007f96a711e000,0x00007f96a721f000)]
+  0x00007f96aca52000 JavaThread "ServerService Thread Pool -- 1" [_thread_blocked, id=10370, stack(0x00007f96aaed0000,0x00007f96aafd1000)]
+  0x00007f96d800c000 JavaThread "DestroyJavaVM" [_thread_blocked, id=10353, stack(0x00007f96e1586000,0x00007f96e1686000)]
+  0x00007f96b839d800 JavaThread "ServerDeploymentRepository-temp-threads - 1" daemon [_thread_blocked, id=10368, stack(0x00007f96ab5d2000,0x00007f96ab6d3000)]
+  0x00007f96d884b000 JavaThread "MSC service thread 1-2" [_thread_blocked, id=10367, stack(0x00007f96ab6d3000,0x00007f96ab7d4000)]
+  0x00007f96d8828800 JavaThread "MSC service thread 1-1" [_thread_blocked, id=10366, stack(0x00007f96c80c8000,0x00007f96c81c9000)]
+  0x00007f96d8175800 JavaThread "Reference Reaper" daemon [_thread_blocked, id=10365, stack(0x00007f96c8bfc000,0x00007f96c8cfd000)]
+  0x00007f96d80b6000 JavaThread "Service Thread" daemon [_thread_blocked, id=10363, stack(0x00007f96c8dfe000,0x00007f96c8eff000)]
+  0x00007f96d80b3000 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=10362, stack(0x00007f96c8f00000,0x00007f96c9000000)]
+  0x00007f96d80b1000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=10361, stack(0x00007f96dc059000,0x00007f96dc159000)]
+  0x00007f96d80af800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10360, stack(0x00007f96dc159000,0x00007f96dc25a000)]
+  0x00007f96d807c800 JavaThread "Finalizer" daemon [_thread_blocked, id=10359, stack(0x00007f96dcc29000,0x00007f96dcd2a000)]
+  0x00007f96d807a000 JavaThread "Reference Handler" daemon [_thread_blocked, id=10358, stack(0x00007f96dcd2a000,0x00007f96dce2b000)]
+
+Other Threads:
+=>0x00007f96d8070800 VMThread [stack: 0x00007f96dce2c000,0x00007f96dcf2c000] [id=10357]
+  0x00007f96d80b9000 WatcherThread [stack: 0x00007f96c8cfe000,0x00007f96c8dfe000] [id=10364]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f96d8008a40] Threads_lock - owner thread: 0x00007f96d8070800
+[0x00007f96d8008f40] Heap_lock - owner thread: 0x00007f96c4188000
+
+heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ def new generation   total 31424K, used 28548K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K, 100% used [0x00000000e0000000, 0x00000000e1b50000, 0x00000000e1b50000)
+  from space 3456K,  16% used [0x00000000e1eb0000, 0x00000000e1f410a8, 0x00000000e2210000)
+  to   space 3456K,   2% used [0x00000000e1b50000, 0x00000000e1b687b8, 0x00000000e1eb0000)
+ tenured generation   total 68440K, used 61789K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  90% used [0x00000000eaaa0000, 0x00000000ee6f76a0, 0x00000000ee6f7800, 0x00000000eed76000)
+ Metaspace       used 86449K, capacity 95698K, committed 96036K, reserved 1132544K
+  class space    used 11096K, capacity 13737K, committed 13860K, reserved 1048576K
+
+Card table byte_map: [0x00007f96dda1a000,0x00007f96ddb1b000] byte_map_base: 0x00007f96dd31a000
+
+Polling page: 0x00007f96e169a000
+
+CodeCache: size=245760Kb used=12303Kb max_used=12333Kb free=233456Kb
+ bounds [0x00007f96c9000000, 0x00007f96c9c30000, 0x00007f96d8000000]
+ total_blobs=5530 nmethods=4781 adapters=662
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 166.458 Thread 0x00007f96d80b3000 5803       3       org.apache.activemq.artemis.core.protocol.core.impl.wireformat.Ping::decodeRest (11 bytes)
+Event: 166.614 Thread 0x00007f96d80b3000 nmethod 5803 0x00007f96c9568f90 code [0x00007f96c9569120, 0x00007f96c95693e0]
+Event: 167.698 Thread 0x00007f96d80b3000 5852       3       java.util.Objects::hashCode (13 bytes)
+Event: 167.851 Thread 0x00007f96d80b3000 nmethod 5852 0x00007f96c9314ed0 code [0x00007f96c9315040, 0x00007f96c9315280]
+Event: 168.110 Thread 0x00007f96d80b3000 5853       3       javax.naming.NameImpl::isSeparator (32 bytes)
+Event: 169.549 Thread 0x00007f96d80b3000 nmethod 5853 0x00007f96c9229f50 code [0x00007f96c922a100, 0x00007f96c922a670]
+Event: 169.623 Thread 0x00007f96d80b3000 5878       3       org.apache.activemq.artemis.core.protocol.core.impl.PacketImpl::encodeRest (1 bytes)
+Event: 169.782 Thread 0x00007f96d80b3000 nmethod 5878 0x00007f96c91d2610 code [0x00007f96c91d2760, 0x00007f96c91d28b0]
+Event: 169.783 Thread 0x00007f96d80b3000 5855       1       java.util.GregorianCalendar::getCalendarType (3 bytes)
+Event: 170.166 Thread 0x00007f96d80b3000 nmethod 5855 0x00007f96c94d76d0 code [0x00007f96c94d7820, 0x00007f96c94d7930]
+
+GC Heap History (10 events):
+Event: 17.440 GC heap after
+Heap after GC invocations=32 (full 3):
+ def new generation   total 27200K, used 3007K [0x00000000e0000000, 0x00000000e1d80000, 0x00000000eaaa0000)
+  eden space 24192K,   0% used [0x00000000e0000000, 0x00000000e0000000, 0x00000000e17a0000)
+  from space 3008K,  99% used [0x00000000e1a90000, 0x00000000e1d7fff8, 0x00000000e1d80000)
+  to   space 3008K,   0% used [0x00000000e17a0000, 0x00000000e17a0000, 0x00000000e1a90000)
+ tenured generation   total 59348K, used 53908K [0x00000000eaaa0000, 0x00000000ee495000, 0x0000000100000000)
+   the space 59348K,  90% used [0x00000000eaaa0000, 0x00000000edf453d0, 0x00000000edf45400, 0x00000000ee495000)
+ Metaspace       used 74019K, capacity 82770K, committed 83108K, reserved 1120256K
+  class space    used 9365K, capacity 11824K, committed 11940K, reserved 1048576K
+}
+Event: 18.962 GC heap before
+{Heap before GC invocations=32 (full 3):
+ def new generation   total 27200K, used 27171K [0x00000000e0000000, 0x00000000e1d80000, 0x00000000eaaa0000)
+  eden space 24192K,  99% used [0x00000000e0000000, 0x00000000e1798eb0, 0x00000000e17a0000)
+  from space 3008K,  99% used [0x00000000e1a90000, 0x00000000e1d7fff8, 0x00000000e1d80000)
+  to   space 3008K,   0% used [0x00000000e17a0000, 0x00000000e17a0000, 0x00000000e1a90000)
+ tenured generation   total 59348K, used 53908K [0x00000000eaaa0000, 0x00000000ee495000, 0x0000000100000000)
+   the space 59348K,  90% used [0x00000000eaaa0000, 0x00000000edf453d0, 0x00000000edf45400, 0x00000000ee495000)
+ Metaspace       used 80818K, capacity 89584K, committed 89764K, reserved 1126400K
+  class space    used 10371K, capacity 12895K, committed 12964K, reserved 1048576K
+Event: 19.227 GC heap after
+Heap after GC invocations=33 (full 4):
+ def new generation   total 31424K, used 0K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K,   0% used [0x00000000e0000000, 0x00000000e0000000, 0x00000000e1b50000)
+  from space 3456K,   0% used [0x00000000e1b50000, 0x00000000e1b50000, 0x00000000e1eb0000)
+  to   space 3456K,   0% used [0x00000000e1eb0000, 0x00000000e1eb0000, 0x00000000e2210000)
+ tenured generation   total 68440K, used 41062K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  59% used [0x00000000eaaa0000, 0x00000000ed2b9a48, 0x00000000ed2b9c00, 0x00000000eed76000)
+ Metaspace       used 80818K, capacity 89584K, committed 89764K, reserved 1126400K
+  class space    used 10371K, capacity 12895K, committed 12964K, reserved 1048576K
+}
+Event: 20.478 GC heap before
+{Heap before GC invocations=33 (full 4):
+ def new generation   total 31424K, used 27968K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K, 100% used [0x00000000e0000000, 0x00000000e1b50000, 0x00000000e1b50000)
+  from space 3456K,   0% used [0x00000000e1b50000, 0x00000000e1b50000, 0x00000000e1eb0000)
+  to   space 3456K,   0% used [0x00000000e1eb0000, 0x00000000e1eb0000, 0x00000000e2210000)
+ tenured generation   total 68440K, used 41062K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  59% used [0x00000000eaaa0000, 0x00000000ed2b9a48, 0x00000000ed2b9c00, 0x00000000eed76000)
+ Metaspace       used 83599K, capacity 92634K, committed 92836K, reserved 1128448K
+  class space    used 10761K, capacity 13349K, committed 13476K, reserved 1048576K
+Event: 20.552 GC heap after
+Heap after GC invocations=34 (full 4):
+ def new generation   total 31424K, used 3456K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K,   0% used [0x00000000e0000000, 0x00000000e0000000, 0x00000000e1b50000)
+  from space 3456K, 100% used [0x00000000e1eb0000, 0x00000000e2210000, 0x00000000e2210000)
+  to   space 3456K,   0% used [0x00000000e1b50000, 0x00000000e1b50000, 0x00000000e1eb0000)
+ tenured generation   total 68440K, used 42198K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  61% used [0x00000000eaaa0000, 0x00000000ed3d5aa8, 0x00000000ed3d5c00, 0x00000000eed76000)
+ Metaspace       used 83599K, capacity 92634K, committed 92836K, reserved 1128448K
+  class space    used 10761K, capacity 13349K, committed 13476K, reserved 1048576K
+}
+Event: 62.462 GC heap before
+{Heap before GC invocations=34 (full 4):
+ def new generation   total 31424K, used 30678K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K,  97% used [0x00000000e0000000, 0x00000000e1a95a88, 0x00000000e1b50000)
+  from space 3456K, 100% used [0x00000000e1eb0000, 0x00000000e2210000, 0x00000000e2210000)
+  to   space 3456K,   0% used [0x00000000e1b50000, 0x00000000e1b50000, 0x00000000e1eb0000)
+ tenured generation   total 68440K, used 42198K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  61% used [0x00000000eaaa0000, 0x00000000ed3d5aa8, 0x00000000ed3d5c00, 0x00000000eed76000)
+ Metaspace       used 86300K, capacity 95554K, committed 95652K, reserved 1130496K
+  class space    used 11085K, capacity 13697K, committed 13732K, reserved 1048576K
+Event: 63.257 GC heap after
+Heap after GC invocations=35 (full 4):
+ def new generation   total 31424K, used 3455K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K,   0% used [0x00000000e0000000, 0x00000000e0000000, 0x00000000e1b50000)
+  from space 3456K,  99% used [0x00000000e1b50000, 0x00000000e1eafff8, 0x00000000e1eb0000)
+  to   space 3456K,   0% used [0x00000000e1eb0000, 0x00000000e1eb0000, 0x00000000e2210000)
+ tenured generation   total 68440K, used 44613K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  65% used [0x00000000eaaa0000, 0x00000000ed6316d0, 0x00000000ed631800, 0x00000000eed76000)
+ Metaspace       used 86300K, capacity 95554K, committed 95652K, reserved 1130496K
+  class space    used 11085K, capacity 13697K, committed 13732K, reserved 1048576K
+}
+Event: 106.199 GC heap before
+{Heap before GC invocations=35 (full 4):
+ def new generation   total 31424K, used 31423K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K, 100% used [0x00000000e0000000, 0x00000000e1b50000, 0x00000000e1b50000)
+  from space 3456K,  99% used [0x00000000e1b50000, 0x00000000e1eafff8, 0x00000000e1eb0000)
+  to   space 3456K,   0% used [0x00000000e1eb0000, 0x00000000e1eb0000, 0x00000000e2210000)
+ tenured generation   total 68440K, used 44613K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  65% used [0x00000000eaaa0000, 0x00000000ed6316d0, 0x00000000ed631800, 0x00000000eed76000)
+ Metaspace       used 86371K, capacity 95656K, committed 95908K, reserved 1132544K
+  class space    used 11089K, capacity 13730K, committed 13732K, reserved 1048576K
+Event: 106.440 GC heap after
+Heap after GC invocations=36 (full 4):
+ def new generation   total 31424K, used 580K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K,   0% used [0x00000000e0000000, 0x00000000e0000000, 0x00000000e1b50000)
+  from space 3456K,  16% used [0x00000000e1eb0000, 0x00000000e1f410a8, 0x00000000e2210000)
+  to   space 3456K,   0% used [0x00000000e1b50000, 0x00000000e1b50000, 0x00000000e1eb0000)
+ tenured generation   total 68440K, used 61789K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  90% used [0x00000000eaaa0000, 0x00000000ee6f76a0, 0x00000000ee6f7800, 0x00000000eed76000)
+ Metaspace       used 86371K, capacity 95656K, committed 95908K, reserved 1132544K
+  class space    used 11089K, capacity 13730K, committed 13732K, reserved 1048576K
+}
+Event: 171.071 GC heap before
+{Heap before GC invocations=36 (full 4):
+ def new generation   total 31424K, used 28548K [0x00000000e0000000, 0x00000000e2210000, 0x00000000eaaa0000)
+  eden space 27968K, 100% used [0x00000000e0000000, 0x00000000e1b50000, 0x00000000e1b50000)
+  from space 3456K,  16% used [0x00000000e1eb0000, 0x00000000e1f410a8, 0x00000000e2210000)
+  to   space 3456K,   0% used [0x00000000e1b50000, 0x00000000e1b50000, 0x00000000e1eb0000)
+ tenured generation   total 68440K, used 61789K [0x00000000eaaa0000, 0x00000000eed76000, 0x0000000100000000)
+   the space 68440K,  90% used [0x00000000eaaa0000, 0x00000000ee6f76a0, 0x00000000ee6f7800, 0x00000000eed76000)
+ Metaspace       used 86449K, capacity 95698K, committed 96036K, reserved 1132544K
+  class space    used 11096K, capacity 13737K, committed 13860K, reserved 1048576K
+
+Deoptimization events (10 events):
+Event: 65.241 Thread 0x00007f96c0193000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9b31358 method=io.netty.buffer.AbstractByteBuf.ensureAccessible()V @ 7
+Event: 67.053 Thread 0x00007f96c0193000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9b31358 method=io.netty.buffer.AbstractByteBuf.ensureAccessible()V @ 7
+Event: 67.065 Thread 0x00007f96c0193000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9b31358 method=io.netty.buffer.AbstractByteBuf.ensureAccessible()V @ 7
+Event: 67.072 Thread 0x00007f96c0193000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9b31358 method=io.netty.buffer.AbstractByteBuf.ensureAccessible()V @ 7
+Event: 67.073 Thread 0x00007f96b91ed800 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9b23c94 method=io.netty.buffer.AbstractByteBuf.ensureAccessible()V @ 7
+Event: 67.074 Thread 0x00007f96b91ed800 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9b23c94 method=io.netty.buffer.AbstractByteBuf.ensureAccessible()V @ 7
+Event: 105.165 Thread 0x00007f96c0193000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9993b94 method=io.netty.buffer.AbstractByteBuf.ensureWritable0(I)V @ 6
+Event: 105.165 Thread 0x00007f96c0193000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9993b94 method=io.netty.buffer.AbstractByteBuf.ensureWritable0(I)V @ 6
+Event: 105.165 Thread 0x00007f96c0193000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9993b94 method=io.netty.buffer.AbstractByteBuf.ensureWritable0(I)V @ 6
+Event: 105.165 Thread 0x00007f96c0193000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x00007f96c9993b94 method=io.netty.buffer.AbstractByteBuf.ensureWritable0(I)V @ 6
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 21.978 Thread 0x00007f96b0221000 Exception <a 'java/lang/LinkageError'> (0x00000000e093f858) thrown at [/build/openjdk-8-fPix8r/openjdk-8-8u212-b03/src/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 1550]
+Event: 22.007 Thread 0x00007f96c008b800 Exception <a 'java/lang/LinkageError': loader (instance of  org/jboss/modules/ModuleClassLoader): attempted  duplicate class definition for name: "org/jboss/remoting3/remote/OutboundMessage$1"> (0x00000000e099d350) thrown at [/build/openjdk-8-fPix8r/openj
+Event: 22.007 Thread 0x00007f96c008b800 Exception <a 'java/lang/LinkageError'> (0x00000000e099d350) thrown at [/build/openjdk-8-fPix8r/openjdk-8-8u212-b03/src/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 1550]
+Event: 22.009 Thread 0x00007f96c008b800 Exception <a 'java/lang/LinkageError': loader (instance of  org/jboss/modules/ModuleClassLoader): attempted  duplicate class definition for name: "org/xnio/streams/BufferPipeOutputStream"> (0x00000000e099e7c0) thrown at [/build/openjdk-8-fPix8r/openjdk-8-
+Event: 22.009 Thread 0x00007f96c008b800 Exception <a 'java/lang/LinkageError'> (0x00000000e099e7c0) thrown at [/build/openjdk-8-fPix8r/openjdk-8-8u212-b03/src/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 1550]
+Event: 49.015 Thread 0x00007f96b01fe800 Exception <a 'java/lang/LinkageError': loader (instance of  org/jboss/modules/ModuleClassLoader): attempted  duplicate class definition for name: "org/apache/activemq/artemis/core/server/impl/QueueImpl$SynchronizedIterator"> (0x00000000e169b270) thrown at
+Event: 49.016 Thread 0x00007f96b01fe800 Exception <a 'java/lang/LinkageError'> (0x00000000e169b270) thrown at [/build/openjdk-8-fPix8r/openjdk-8-8u212-b03/src/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 1550]
+Event: 49.045 Thread 0x00007f96b01fe800 Exception <a 'java/lang/LinkageError': loader (instance of  org/jboss/modules/ModuleClassLoader): attempted  duplicate class definition for name: "org/apache/activemq/artemis/utils/collections/PriorityLinkedListImpl$PriorityLinkedListIterator"> (0x0000000
+Event: 49.119 Thread 0x00007f96b01fe800 Exception <a 'java/lang/LinkageError'> (0x00000000e16b8860) thrown at [/build/openjdk-8-fPix8r/openjdk-8-8u212-b03/src/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 1550]
+Event: 63.346 Thread 0x0000556cae3ef000 Implicit null exception at 0x00007f96c9b7eeb2 to 0x00007f96c9b7f0b9
+
+Events (10 events):
+Event: 169.581 Thread 0x00007f96d80b3000 flushing nmethod 0x00007f96c94d76d0
+Event: 169.587 Thread 0x00007f96d80b3000 flushing nmethod 0x00007f96c94f77d0
+Event: 169.712 Thread 0x00007f96b92f5800 Thread exited: 0x00007f96b92f5800
+Event: 169.783 Thread 0x00007f96d80b3000 flushing nmethod 0x00007f96c9567990
+Event: 169.927 Executing VM operation: RevokeBias
+Event: 169.963 Executing VM operation: RevokeBias done
+Event: 169.990 Executing VM operation: RevokeBias
+Event: 170.022 Executing VM operation: RevokeBias done
+Event: 171.002 Thread 0x00007f96d80b3000 flushing nmethod 0x00007f96c95bb2d0
+Event: 171.056 Executing VM operation: GenCollectForAllocation
+
+
+Dynamic libraries:
+e0000000-e2210000 rw-p 00000000 00:00 0 
+e2210000-eaaa0000 ---p 00000000 00:00 0 
+eaaa0000-eed76000 rw-p 00000000 00:00 0 
+efd77000-100000000 ---p 00000000 00:00 0 
+100000000-100d89000 rw-p 00000000 00:00 0 
+100d89000-140000000 ---p 00000000 00:00 0 
+556cad69b000-556cad69c000 r-xp 00000000 08:01 1068976                    /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+556cad89b000-556cad89c000 r--p 00000000 08:01 1068976                    /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+556cad89c000-556cad89d000 rw-p 00001000 08:01 1068976                    /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+556cadebe000-556cae5e8000 rw-p 00000000 00:00 0                          [heap]
+7f969b1d9000-7f969b1dc000 ---p 00000000 00:00 0 
+7f969b1dc000-7f969b2da000 rw-p 00000000 00:00 0 
+7f969b2da000-7f969b2dd000 ---p 00000000 00:00 0 
+7f969b2dd000-7f969b3db000 rw-p 00000000 00:00 0 
+7f969b3db000-7f969b3de000 ---p 00000000 00:00 0 
+7f969b3de000-7f969b4dc000 rw-p 00000000 00:00 0 
+7f969b4dc000-7f969b4df000 ---p 00000000 00:00 0 
+7f969b4df000-7f969b5dd000 rw-p 00000000 00:00 0 
+7f969b5dd000-7f969b5e0000 ---p 00000000 00:00 0 
+7f969b5e0000-7f969b6de000 rw-p 00000000 00:00 0 
+7f969b6de000-7f969b6e1000 ---p 00000000 00:00 0 
+7f969b6e1000-7f969b7df000 rw-p 00000000 00:00 0 
+7f969b7df000-7f969b7e2000 ---p 00000000 00:00 0 
+7f969b7e2000-7f969b8e0000 rw-p 00000000 00:00 0 
+7f969b8e0000-7f969b8e3000 ---p 00000000 00:00 0 
+7f969b8e3000-7f969b9e1000 rw-p 00000000 00:00 0 
+7f969b9e1000-7f969b9e4000 ---p 00000000 00:00 0 
+7f969b9e4000-7f969bae2000 rw-p 00000000 00:00 0 
+7f969bae2000-7f969bae5000 ---p 00000000 00:00 0 
+7f969bae5000-7f969bbe3000 rw-p 00000000 00:00 0 
+7f969bbe3000-7f969bbe6000 ---p 00000000 00:00 0 
+7f969bbe6000-7f969bce4000 rw-p 00000000 00:00 0 
+7f969bce4000-7f969bce7000 ---p 00000000 00:00 0 
+7f969bce7000-7f969bde5000 rw-p 00000000 00:00 0 
+7f969bde5000-7f969bde8000 ---p 00000000 00:00 0 
+7f969bde8000-7f969bee6000 rw-p 00000000 00:00 0 
+7f969bee6000-7f969bee9000 ---p 00000000 00:00 0 
+7f969bee9000-7f969bfe7000 rw-p 00000000 00:00 0 
+7f969bfe7000-7f969bfea000 ---p 00000000 00:00 0 
+7f969bfea000-7f969c0e8000 rw-p 00000000 00:00 0 
+7f969c0e8000-7f969c0eb000 ---p 00000000 00:00 0 
+7f969c0eb000-7f969c1e9000 rw-p 00000000 00:00 0 
+7f969c1e9000-7f969c1ec000 ---p 00000000 00:00 0 
+7f969c1ec000-7f969c2ea000 rw-p 00000000 00:00 0 
+7f969c2ea000-7f969c2ed000 ---p 00000000 00:00 0 
+7f969c2ed000-7f969c3eb000 rw-p 00000000 00:00 0 
+7f969c3eb000-7f969c3ee000 ---p 00000000 00:00 0 
+7f969c3ee000-7f969c4ec000 rw-p 00000000 00:00 0 
+7f969c4ec000-7f969c4ef000 ---p 00000000 00:00 0 
+7f969c4ef000-7f969c5ed000 rw-p 00000000 00:00 0 
+7f969c5ed000-7f969c5f0000 ---p 00000000 00:00 0 
+7f969c5f0000-7f969c6ee000 rw-p 00000000 00:00 0 
+7f969c6ee000-7f969c6f1000 ---p 00000000 00:00 0 
+7f969c6f1000-7f969c7ef000 rw-p 00000000 00:00 0 
+7f969c7ef000-7f969c7f2000 ---p 00000000 00:00 0 
+7f969c7f2000-7f969c8f0000 rw-p 00000000 00:00 0 
+7f969c8f0000-7f969c8f3000 ---p 00000000 00:00 0 
+7f969c8f3000-7f969c9f1000 rw-p 00000000 00:00 0 
+7f969c9f1000-7f969c9f4000 ---p 00000000 00:00 0 
+7f969c9f4000-7f969caf2000 rw-p 00000000 00:00 0 
+7f969caf2000-7f969caf5000 ---p 00000000 00:00 0 
+7f969caf5000-7f969cbf3000 rw-p 00000000 00:00 0 
+7f969cbf3000-7f969cbf6000 ---p 00000000 00:00 0 
+7f969cbf6000-7f969ccf4000 rw-p 00000000 00:00 0 
+7f969ccf4000-7f969ccf7000 ---p 00000000 00:00 0 
+7f969ccf7000-7f969cdf5000 rw-p 00000000 00:00 0 
+7f969cdf5000-7f969cdf8000 ---p 00000000 00:00 0 
+7f969cdf8000-7f969cef6000 rw-p 00000000 00:00 0 
+7f969cef6000-7f969cef9000 ---p 00000000 00:00 0 
+7f969cef9000-7f969cff7000 rw-p 00000000 00:00 0 
+7f969cff7000-7f969cffa000 ---p 00000000 00:00 0 
+7f969cffa000-7f969d0f8000 rw-p 00000000 00:00 0 
+7f969d0f8000-7f969d0fb000 ---p 00000000 00:00 0 
+7f969d0fb000-7f969d1f9000 rw-p 00000000 00:00 0 
+7f969d1f9000-7f969d1fc000 ---p 00000000 00:00 0 
+7f969d1fc000-7f969d2fa000 rw-p 00000000 00:00 0 
+7f969d2fa000-7f969d2fd000 ---p 00000000 00:00 0 
+7f969d2fd000-7f969d3fb000 rw-p 00000000 00:00 0 
+7f969d3fb000-7f969d3fe000 ---p 00000000 00:00 0 
+7f969d3fe000-7f969d6fc000 rw-p 00000000 00:00 0 
+7f969d6fc000-7f969d6ff000 ---p 00000000 00:00 0 
+7f969d6ff000-7f969d7fd000 rw-p 00000000 00:00 0 
+7f969d7fd000-7f969d800000 ---p 00000000 00:00 0 
+7f969d800000-7f969d8fe000 rw-p 00000000 00:00 0 
+7f969d8fe000-7f969d901000 ---p 00000000 00:00 0 
+7f969d901000-7f969d9ff000 rw-p 00000000 00:00 0 
+7f969d9ff000-7f969da02000 ---p 00000000 00:00 0 
+7f969da02000-7f969db00000 rw-p 00000000 00:00 0 
+7f969db00000-7f969db03000 ---p 00000000 00:00 0 
+7f969db03000-7f969dc01000 rw-p 00000000 00:00 0 
+7f969dc01000-7f969dc04000 ---p 00000000 00:00 0 
+7f969dc04000-7f969dd02000 rw-p 00000000 00:00 0 
+7f969dd02000-7f969dd05000 ---p 00000000 00:00 0 
+7f969dd05000-7f969de03000 rw-p 00000000 00:00 0 
+7f969de03000-7f969de06000 ---p 00000000 00:00 0 
+7f969de06000-7f969df04000 rw-p 00000000 00:00 0 
+7f969df04000-7f969df07000 ---p 00000000 00:00 0 
+7f969df07000-7f969e005000 rw-p 00000000 00:00 0 
+7f969e005000-7f969e008000 ---p 00000000 00:00 0 
+7f969e008000-7f969e106000 rw-p 00000000 00:00 0 
+7f969e106000-7f969e109000 ---p 00000000 00:00 0 
+7f969e109000-7f969e207000 rw-p 00000000 00:00 0 
+7f969e207000-7f969e20a000 ---p 00000000 00:00 0 
+7f969e20a000-7f969e508000 rw-p 00000000 00:00 0 
+7f969e508000-7f969e708000 rw-p 00000000 00:00 0 
+7f969e708000-7f969e70b000 ---p 00000000 00:00 0 
+7f969e70b000-7f969e809000 rw-p 00000000 00:00 0 
+7f969e809000-7f969e80c000 ---p 00000000 00:00 0 
+7f969e80c000-7f969e90a000 rw-p 00000000 00:00 0 
+7f969e90a000-7f969e90d000 ---p 00000000 00:00 0 
+7f969e90d000-7f969ea0b000 rw-p 00000000 00:00 0 
+7f969ea0b000-7f969ea0e000 ---p 00000000 00:00 0 
+7f969ea0e000-7f969eb0c000 rw-p 00000000 00:00 0 
+7f969eb0c000-7f969eb0f000 ---p 00000000 00:00 0 
+7f969eb0f000-7f969ec0d000 rw-p 00000000 00:00 0 
+7f969ec0d000-7f969ec10000 ---p 00000000 00:00 0 
+7f969ec10000-7f969ed0e000 rw-p 00000000 00:00 0 
+7f969ed0e000-7f969ed11000 ---p 00000000 00:00 0 
+7f969ed11000-7f969ee0f000 rw-p 00000000 00:00 0 
+7f969ee0f000-7f969ee12000 ---p 00000000 00:00 0 
+7f969ee12000-7f969f110000 rw-p 00000000 00:00 0 
+7f969f110000-7f969f113000 ---p 00000000 00:00 0 
+7f969f113000-7f969f211000 rw-p 00000000 00:00 0 
+7f969f211000-7f969f214000 ---p 00000000 00:00 0 
+7f969f214000-7f969f312000 rw-p 00000000 00:00 0 
+7f969f514000-7f969f714000 rw-p 00000000 00:00 0 
+7f969f714000-7f969f721000 r-xp 00000000 08:01 156372                     /tmp/libnetty_transport_native_epoll_x86_642105750470741605815.so (deleted)
+7f969f721000-7f969f920000 ---p 0000d000 08:01 156372                     /tmp/libnetty_transport_native_epoll_x86_642105750470741605815.so (deleted)
+7f969f920000-7f969f921000 rw-p 0000c000 08:01 156372                     /tmp/libnetty_transport_native_epoll_x86_642105750470741605815.so (deleted)
+7f969f921000-7f969f922000 rw-p 00000000 00:00 0 
+7f969f922000-7f969f925000 ---p 00000000 00:00 0 
+7f969f925000-7f969fa23000 rw-p 00000000 00:00 0 
+7f969fa23000-7f969fa26000 ---p 00000000 00:00 0 
+7f969fa26000-7f969fb24000 rw-p 00000000 00:00 0 
+7f969fb24000-7f969fb27000 ---p 00000000 00:00 0 
+7f969fb27000-7f969fc25000 rw-p 00000000 00:00 0 
+7f969fc25000-7f969fc28000 ---p 00000000 00:00 0 
+7f969fc28000-7f969fd26000 rw-p 00000000 00:00 0 
+7f969fd26000-7f969fd29000 ---p 00000000 00:00 0 
+7f969fd29000-7f96a0027000 rw-p 00000000 00:00 0 
+7f96a0027000-7f96a0227000 rw-p 00000000 00:00 0 
+7f96a0227000-7f96a0c28000 rw-p 00000000 00:00 0 
+7f96a0c28000-7f96a0c2b000 ---p 00000000 00:00 0 
+7f96a0c2b000-7f96a0d29000 rw-p 00000000 00:00 0 
+7f96a0d29000-7f96a0d2c000 ---p 00000000 00:00 0 
+7f96a0d2c000-7f96a0e2a000 rw-p 00000000 00:00 0 
+7f96a0e2a000-7f96a0e2d000 ---p 00000000 00:00 0 
+7f96a0e2d000-7f96a112b000 rw-p 00000000 00:00 0 
+7f96a112b000-7f96a112e000 ---p 00000000 00:00 0 
+7f96a112e000-7f96a122c000 rw-p 00000000 00:00 0 
+7f96a122c000-7f96a122f000 ---p 00000000 00:00 0 
+7f96a122f000-7f96a152d000 rw-p 00000000 00:00 0 
+7f96a152d000-7f96a172d000 rw-p 00000000 00:00 0 
+7f96a172d000-7f96a1730000 ---p 00000000 00:00 0 
+7f96a1730000-7f96a1a2e000 rw-p 00000000 00:00 0 
+7f96a1b2f000-7f96a1b32000 ---p 00000000 00:00 0 
+7f96a1b32000-7f96a1c30000 rw-p 00000000 00:00 0 
+7f96a1c30000-7f96a1c36000 r--s 0007a000 08:01 156370                     /home/user/wildfly/standalone/tmp/vfs/temp/temp9a608a7c8fb5302d/content-923d20b5ee88c4ac/content
+7f96a1c36000-7f96a1e36000 rw-p 00000000 00:00 0 
+7f96a1e38000-7f96a1e3f000 r--s 00000000 08:01 140267                     /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f96a1e3f000-7f96a1e40000 r--s 00001000 08:01 155929                     /home/user/wildfly/modules/system/layers/base/io/smallrye/opentracing/main/smallrye-opentracing-1.1.1.jar
+7f96a1e40000-7f96a1e41000 r--s 00002000 08:01 155576                     /home/user/wildfly/modules/system/layers/base/org/eclipse/microprofile/opentracing/main/microprofile-opentracing-api-1.1.jar
+7f96a1e41000-7f96a1e42000 r--s 00001000 08:01 155927                     /home/user/wildfly/modules/system/layers/base/io/opentracing/opentracing-util/main/opentracing-util-0.31.0.jar
+7f96a1e42000-7f96a1e44000 r--s 00002000 08:01 278010                     /home/user/wildfly/modules/system/layers/base/io/opentracing/opentracing-api/main/opentracing-api-0.31.0.jar
+7f96a1e44000-7f96a1e45000 r--s 00001000 08:01 278015                     /home/user/wildfly/modules/system/layers/base/io/opentracing/contrib/opentracing-tracerresolver/main/opentracing-tracerresolver-0.1.5.jar
+7f96a1e45000-7f96a1e54000 r--s 0009c000 08:01 394008                     /home/user/wildfly/modules/system/layers/base/io/jaegertracing/jaeger/main/jaeger-thrift-0.30.6.jar
+7f96a1e54000-7f96a1e58000 r--s 0001b000 08:01 394009                     /home/user/wildfly/modules/system/layers/base/io/jaegertracing/jaeger/main/jaeger-core-0.30.6.jar
+7f96a1e58000-7f96a1e5b000 r--s 00016000 08:01 278042                     /home/user/wildfly/modules/system/layers/base/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/main/jackson-datatype-jsr310-2.9.8.jar
+7f96a1e5b000-7f96a1e5d000 r--s 00007000 08:01 155944                     /home/user/wildfly/modules/system/layers/base/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/main/jackson-datatype-jdk8-2.9.8.jar
+7f96a1e5d000-7f96a1e5e000 r--s 00003000 08:01 155796                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-json-binding-provider/main/resteasy-json-binding-provider-3.6.3.Final.jar
+7f96a1e5e000-7f96a1e60000 r--s 00002000 08:01 155773                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-json-p-provider/main/resteasy-json-p-provider-3.6.3.Final.jar
+7f96a1e60000-7f96a1e61000 r--s 00007000 08:01 278043                     /home/user/wildfly/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-module-jaxb-annotations-2.9.8.jar
+7f96a1e61000-7f96a1e62000 r--s 00007000 08:01 278046                     /home/user/wildfly/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-jaxrs-base-2.9.8.jar
+7f96a1e62000-7f96a1e63000 r--s 00003000 08:01 278044                     /home/user/wildfly/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-jaxrs-json-provider-2.9.8.jar
+7f96a1e63000-7f96a1e75000 r--s 00137000 08:01 1189367                    /home/user/wildfly/modules/system/layers/base/com/fasterxml/jackson/core/jackson-databind/main/jackson-databind-2.9.8.jar
+7f96a1e75000-7f96a1e79000 r--s 0004c000 08:01 155939                     /home/user/wildfly/modules/system/layers/base/com/fasterxml/jackson/core/jackson-core/main/jackson-core-2.9.8.jar
+7f96a1e79000-7f96a1e7c000 r--s 0000e000 08:01 155942                     /home/user/wildfly/modules/system/layers/base/com/fasterxml/jackson/core/jackson-annotations/main/jackson-annotations-2.9.8.jar
+7f96a1e7c000-7f96a1e7e000 r--s 00004000 08:01 155788                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson2-provider/main/resteasy-jackson2-provider-3.6.3.Final.jar
+7f96a1e7e000-7f96a1e86000 r--s 00045000 08:01 155588                     /home/user/wildfly/modules/system/layers/base/org/eclipse/yasson/main/yasson-1.0.3.jar
+7f96a1e86000-7f96a1e88000 r--s 00004000 08:01 1059411                    /home/user/wildfly/modules/system/layers/base/javax/json/bind/api/main/javax.json.bind-api-1.0.jar
+7f96a1e88000-7f96a1e98000 r--s 000a1000 08:01 1189283                    /home/user/wildfly/modules/system/layers/base/org/apache/qpid/proton/main/proton-j-0.27.3.jar
+7f96a1e98000-7f96a1e9d000 r--s 0002e000 08:01 1058843                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/java-support-7.1.1.jar
+7f96a1e9d000-7f96a1ea1000 r--s 00021000 08:01 1058548                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/cryptacular-1.2.0.jar
+7f96a1ea1000-7f96a1eaa000 r--s 0003f000 08:01 1058841                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-xmlsec-impl-3.3.0.jar
+7f96a1eaa000-7f96a1eb1000 r--s 0002c000 08:01 1058842                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-xmlsec-api-3.3.0.jar
+7f96a1eb1000-7f96a1eb3000 r--s 00005000 08:01 1058554                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-xacml-saml-impl-3.3.0.jar
+7f96a1eb3000-7f96a1eb5000 r--s 00001000 08:01 1058846                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-xacml-saml-api-3.3.0.jar
+7f96a1eb5000-7f96a1ebc000 r--s 0002a000 08:01 1058557                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-xacml-impl-3.3.0.jar
+7f96a1ebc000-7f96a1ebf000 r--s 00009000 08:01 1058556                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-xacml-api-3.3.0.jar
+7f96a1ebf000-7f96a1ec5000 r--s 00022000 08:01 1058549                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-soap-api-3.3.0.jar
+7f96a1ec5000-7f96a1ec8000 r--s 00015000 08:01 1058555                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-security-impl-3.3.0.jar
+7f96a1ec8000-7f96a1eca000 r--s 0000d000 08:01 1058844                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-security-api-3.3.0.jar
+7f96a1eca000-7f96a1ee7000 r--s 000f7000 08:01 1058845                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-saml-impl-3.3.0.jar
+7f96a1ee7000-7f96a1ef4000 r--s 00055000 08:01 1058553                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-saml-api-3.3.0.jar
+7f96a1ef4000-7f96a1ef6000 r--s 00005000 08:01 1058550                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-profile-api-3.3.0.jar
+7f96a1ef6000-7f96a1efb000 r--s 00027000 08:01 1058578                    /home/user/wildfly/modules/system/layers/base/org/opensaml/main/opensaml-core-3.3.0.jar
+7f96a1efb000-7f96a1f0c000 r--s 0008a000 08:01 661650                     /home/user/wildfly/modules/system/layers/base/org/joda/time/main/joda-time-2.9.7.jar
+7f96a1f0c000-7f96a1f22000 r--s 00100000 08:01 1189305                    /home/user/wildfly/modules/system/layers/base/org/apache/santuario/xmlsec/main/xmlsec-2.1.2.jar
+7f96a1f22000-7f96a1f23000 r--s 00014000 08:01 277940                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/domain-http-error-context/main/wildfly-domain-http-error-context-8.0.0.Final.jar
+7f96a1f23000-7f96a1f2c000 r--s 008ae000 08:01 277995                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/console/main/hal-console-3.1.2.Final-resources.jar
+7f96a1f2c000-7f96a1f2f000 ---p 00000000 00:00 0 
+7f96a1f2f000-7f96a202d000 rw-p 00000000 00:00 0 
+7f96a202d000-7f96a2030000 ---p 00000000 00:00 0 
+7f96a2030000-7f96a212e000 rw-p 00000000 00:00 0 
+7f96a212e000-7f96a2131000 ---p 00000000 00:00 0 
+7f96a2131000-7f96a242f000 rw-p 00000000 00:00 0 
+7f96a242f000-7f96a2431000 r--s 00013000 08:01 1189300                    /home/user/wildfly/modules/system/layers/base/org/apache/xml-resolver/main/xml-resolver-1.2.jar
+7f96a2431000-7f96a2434000 ---p 00000000 00:00 0 
+7f96a2434000-7f96a2532000 rw-p 00000000 00:00 0 
+7f96a2532000-7f96a2536000 r--s 00026000 08:01 155922                     /home/user/wildfly/modules/system/layers/base/org/apache/ws/xmlschema/main/xmlschema-core-2.2.1.jar
+7f96a2536000-7f96a2539000 r--s 00010000 08:01 1189302                    /home/user/wildfly/modules/system/layers/base/org/apache/neethi/main/neethi-3.1.1.jar
+7f96a2539000-7f96a253e000 r--s 00044000 08:01 394034                     /home/user/wildfly/modules/system/layers/base/com/sun/xml/fastinfoset/main/FastInfoset-1.2.13.jar
+7f96a253e000-7f96a2540000 r--s 00011000 08:01 155871                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/xts/main/wildfly-xts-16.0.0.Final.jar
+7f96a2540000-7f96a2543000 r--s 00006000 08:01 155885                     /home/user/wildfly/modules/system/layers/base/org/jboss/narayana/txframework/main/txframework-5.9.3.Final.jar
+7f96a2543000-7f96a2546000 r--s 0000b000 08:01 155893                     /home/user/wildfly/modules/system/layers/base/org/jboss/narayana/compensations/main/compensations-5.9.3.Final.jar
+7f96a2546000-7f96a2547000 r--s 0000a000 08:01 155750                     /home/user/wildfly/modules/system/layers/base/org/jboss/xts/main/jbosstxbridge-5.9.3.Final.jar
+7f96a2547000-7f96a255f000 r--s 000dd000 08:01 155748                     /home/user/wildfly/modules/system/layers/base/org/jboss/xts/main/jbossxts-5.9.3.Final.jar
+7f96a255f000-7f96a275f000 rw-p 00000000 00:00 0 
+7f96a275f000-7f96a2762000 ---p 00000000 00:00 0 
+7f96a2762000-7f96a2860000 rw-p 00000000 00:00 0 
+7f96a2860000-7f96a2863000 ---p 00000000 00:00 0 
+7f96a2863000-7f96a2961000 rw-p 00000000 00:00 0 
+7f96a2961000-7f96a2964000 ---p 00000000 00:00 0 
+7f96a2964000-7f96a2a62000 rw-p 00000000 00:00 0 
+7f96a2a62000-7f96a2a65000 ---p 00000000 00:00 0 
+7f96a2a65000-7f96a2b63000 rw-p 00000000 00:00 0 
+7f96a2b63000-7f96a2b76000 r--s 000b0000 08:01 1058864                    /home/user/wildfly/modules/system/layers/base/org/bouncycastle/main/bcpkix-jdk15on-1.60.jar
+7f96a2b76000-7f96a2b79000 r--s 00018000 08:01 1058861                    /home/user/wildfly/modules/system/layers/base/org/bouncycastle/main/bcmail-jdk15on-1.60.jar
+7f96a2b79000-7f96a2b7c000 ---p 00000000 00:00 0 
+7f96a2b7c000-7f96a2c7a000 rw-p 00000000 00:00 0 
+7f96a2c7a000-7f96a2c7d000 ---p 00000000 00:00 0 
+7f96a2c7d000-7f96a2f7b000 rw-p 00000000 00:00 0 
+7f96a2f7b000-7f96a317b000 rw-p 00000000 00:00 0 
+7f96a317b000-7f96a317e000 ---p 00000000 00:00 0 
+7f96a317e000-7f96a327c000 rw-p 00000000 00:00 0 
+7f96a327c000-7f96a32d4000 r--s 003a7000 08:01 1058863                    /home/user/wildfly/modules/system/layers/base/org/bouncycastle/main/bcprov-jdk15on-1.60.jar
+7f96a32d4000-7f96a32d8000 r--s 0001c000 08:01 155918                     /home/user/wildfly/modules/system/layers/base/org/apache/ws/security/main/jasypt-1.9.2.jar
+7f96a32d8000-7f96a32e0000 r--s 0005d000 08:01 155921                     /home/user/wildfly/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-stax-2.2.2.jar
+7f96a32e0000-7f96a32e3000 r--s 0001e000 08:01 155920                     /home/user/wildfly/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-policy-stax-2.2.2.jar
+7f96a32e3000-7f96a32e7000 r--s 0004e000 08:01 155915                     /home/user/wildfly/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-dom-2.2.2.jar
+7f96a32e7000-7f96a32ec000 r--s 00040000 08:01 155917                     /home/user/wildfly/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-common-2.2.2.jar
+7f96a32ec000-7f96a32f0000 r--s 00031000 08:01 155916                     /home/user/wildfly/modules/system/layers/base/org/apache/ws/security/main/wss4j-policy-2.2.2.jar
+7f96a32f0000-7f96a32f2000 r--s 00009000 08:01 155914                     /home/user/wildfly/modules/system/layers/base/org/apache/ws/security/main/wss4j-bindings-2.2.2.jar
+7f96a32f2000-7f96a32f7000 r--s 00042000 08:01 542929                     /home/user/wildfly/modules/system/layers/base/com/sun/xml/messaging/saaj/main/saaj-impl-1.3.16-jbossorg-1.jar
+7f96a32f7000-7f96a32fd000 r--s 00046000 08:01 155906                     /home/user/wildfly/modules/system/layers/base/org/apache/cxf/services-sts/main/cxf-services-sts-core-3.2.7.jar
+7f96a32fd000-7f96a3307000 r--s 000a1000 08:01 155908                     /home/user/wildfly/modules/system/layers/base/org/apache/cxf/ws-security/main/cxf-rt-ws-security-3.2.7.jar
+7f96a3307000-7f96a3507000 rw-p 00000000 00:00 0 
+7f96a3507000-7f96a3509000 r--s 0000b000 08:01 155911                     /home/user/wildfly/modules/system/layers/base/org/apache/cxf/main/cxf-rt-features-logging-3.2.7.jar
+7f96a3509000-7f96a3521000 r--s 0013f000 08:01 155912                     /home/user/wildfly/modules/system/layers/base/org/apache/cxf/main/cxf-core-3.2.7.jar
+7f96a3521000-7f96a3522000 r--s 00002000 08:01 1189323                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-runtime-3.2.3.jar
+7f96a3522000-7f96a3524000 r--s 00002000 08:01 1189324                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-ts-3.2.3.jar
+7f96a3524000-7f96a3525000 r--s 00004000 08:01 1189330                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-dv-3.2.3.jar
+7f96a3525000-7f96a3527000 r--s 00002000 08:01 1189345                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-bug986-3.2.3.jar
+7f96a3527000-7f96a3529000 r--s 00002000 08:01 1189321                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-boolean-3.2.3.jar
+7f96a3529000-7f96a352b000 r--s 0000f000 08:01 1189344                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-ws-discovery-api-3.2.7.jar
+7f96a352b000-7f96a352e000 r--s 00027000 08:01 1189322                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-frontend-jaxws-3.2.7.jar
+7f96a352e000-7f96a352f000 r--s 0000a000 08:01 1189342                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-databinding-jaxb-3.2.7.jar
+7f96a352f000-7f96a3531000 r--s 0000e000 08:01 1189350                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-core-3.2.7.jar
+7f96a3531000-7f96a3534000 r--s 00010000 08:01 1189333                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-validator-3.2.7.jar
+7f96a3534000-7f96a3537000 r--s 0001c000 08:01 1189351                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-java2ws-3.2.7.jar
+7f96a3537000-7f96a353a000 r--s 00026000 08:01 1189336                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-common-3.2.7.jar
+7f96a353a000-7f96a3541000 r--s 00060000 08:01 1189329                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-rm-3.2.7.jar
+7f96a3541000-7f96a3546000 r--s 00030000 08:01 1189335                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-policy-3.2.7.jar
+7f96a3546000-7f96a3548000 r--s 00005000 08:01 1189339                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-mex-3.2.7.jar
+7f96a3548000-7f96a354a000 r--s 00011000 08:01 1189332                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-addr-3.2.7.jar
+7f96a354a000-7f96a354d000 r--s 00028000 08:01 1189337                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-wsdl-3.2.7.jar
+7f96a354d000-7f96a354f000 r--s 00005000 08:01 1189349                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-local-3.2.7.jar
+7f96a354f000-7f96a3552000 r--s 0001d000 08:01 1189319                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-jms-3.2.7.jar
+7f96a3552000-7f96a3554000 r--s 0000e000 08:01 1189328                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-hc-3.2.7.jar
+7f96a3554000-7f96a3559000 r--s 00054000 08:01 1189326                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-3.2.7.jar
+7f96a3559000-7f96a355b000 r--s 00009000 08:01 1189320                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-security-saml-3.2.7.jar
+7f96a355b000-7f96a355c000 r--s 00007000 08:01 1189325                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-security-3.2.7.jar
+7f96a355c000-7f96a355f000 r--s 00010000 08:01 1189327                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-management-3.2.7.jar
+7f96a355f000-7f96a3562000 r--s 00017000 08:01 1189334                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-simple-3.2.7.jar
+7f96a3562000-7f96a3567000 r--s 00050000 08:01 1189347                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-jaxws-3.2.7.jar
+7f96a3567000-7f96a3569000 r--s 0000a000 08:01 1189343                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-features-clustering-3.2.7.jar
+7f96a3569000-7f96a356b000 r--s 00018000 08:01 1189338                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-jaxb-3.2.7.jar
+7f96a356b000-7f96a3570000 r--s 00039000 08:01 1189331                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-aegis-3.2.7.jar
+7f96a3570000-7f96a3572000 r--s 00008000 08:01 1189348                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-xml-3.2.7.jar
+7f96a3572000-7f96a3576000 r--s 00029000 08:01 1189346                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-soap-3.2.7.jar
+7f96a3576000-7f96a3577000 r--s 00008000 08:01 1189341                    /home/user/wildfly/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-coloc-3.2.7.jar
+7f96a3577000-7f96a357b000 r--s 0001a000 08:01 661615                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main/jbossws-cxf-server-5.2.4.Final.jar
+7f96a357b000-7f96a357d000 r--s 00003000 08:01 661616                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-udp/main/jbossws-cxf-transports-udp-5.2.4.Final.jar
+7f96a357d000-7f96a357e000 r--s 00003000 08:01 661619                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-undertow/main/jbossws-cxf-transports-undertow-5.2.4.Final.jar
+7f96a357e000-7f96a357f000 r--s 00000000 08:01 661555                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main/jbossws-cxf-factories-5.2.4.Final.jar
+7f96a357f000-7f96a3581000 r--s 00008000 08:01 541764                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-jaspi-5.2.4.Final.jar
+7f96a3581000-7f96a3586000 r--s 00026000 08:01 541763                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-client-5.2.4.Final.jar
+7f96a3586000-7f96a3786000 rw-p 00000000 00:00 0 
+7f96a3786000-7f96a378e000 r--s 00061000 08:01 394030                     /home/user/wildfly/modules/system/layers/base/com/sun/xsom/main/xsom-2.3.1.jar
+7f96a378e000-7f96a3791000 r--s 0000f000 08:01 394033                     /home/user/wildfly/modules/system/layers/base/com/sun/xml/txw2/main/txw2-2.3.1.jar
+7f96a3791000-7f96a3792000 r--s 00006000 08:01 543000                     /home/user/wildfly/modules/system/layers/base/com/sun/istack/main/istack-commons-tools-3.0.7.jar
+7f96a3792000-7f96a3794000 r--s 00005000 08:01 543001                     /home/user/wildfly/modules/system/layers/base/com/sun/istack/main/istack-commons-runtime-3.0.7.jar
+7f96a3794000-7f96a379b000 r--s 00047000 08:01 394039                     /home/user/wildfly/modules/system/layers/base/com/sun/xml/bind/main/rngom-2.3.1.jar
+7f96a379b000-7f96a379f000 r--s 00024000 08:01 394036                     /home/user/wildfly/modules/system/layers/base/com/sun/xml/bind/main/codemodel-2.3.1.jar
+7f96a379f000-7f96a37a2000 r--s 0001e000 08:01 394041                     /home/user/wildfly/modules/system/layers/base/com/sun/xml/bind/main/jaxb-jxc-2.3.1.jar
+7f96a37a2000-7f96a37b3000 r--s 000e0000 08:01 394040                     /home/user/wildfly/modules/system/layers/base/com/sun/xml/bind/main/jaxb-xjc-2.3.1.jar
+7f96a37b3000-7f96a37c7000 r--s 000f7000 08:01 394037                     /home/user/wildfly/modules/system/layers/base/com/sun/xml/bind/main/jaxb-runtime-2.3.1.jar
+7f96a37c7000-7f96a39c7000 rw-p 00000000 00:00 0 
+7f96a39c7000-7f96a39ca000 ---p 00000000 00:00 0 
+7f96a39ca000-7f96a3ac8000 rw-p 00000000 00:00 0 
+7f96a3ac8000-7f96a3acb000 ---p 00000000 00:00 0 
+7f96a3acb000-7f96a3bc9000 rw-p 00000000 00:00 0 
+7f96a3bc9000-7f96a3bcc000 ---p 00000000 00:00 0 
+7f96a3bcc000-7f96a3cca000 rw-p 00000000 00:00 0 
+7f96a3cca000-7f96a3cd7000 r--s 00083000 08:01 1189296                    /home/user/wildfly/modules/system/layers/base/org/apache/commons/collections/main/commons-collections-3.2.2.jar
+7f96a3cd7000-7f96a3cd9000 r--s 00005000 08:01 155656                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/web/spi/main/wildfly-clustering-web-spi-16.0.0.Final.jar
+7f96a3cd9000-7f96a3cdd000 r--s 0002a000 08:01 1189352                    /home/user/wildfly/modules/system/layers/base/javax/wsdl4j/api/main/wsdl4j-1.6.3.jar
+7f96a3cdd000-7f96a3edd000 rw-p 00000000 00:00 0 
+7f96a3edd000-7f96a3ef0000 r--s 00241000 08:01 155587                     /home/user/wildfly/modules/system/layers/base/org/eclipse/jdt/ecj/main/ecj-4.6.1.jar
+7f96a3ef0000-7f96a3ef3000 ---p 00000000 00:00 0 
+7f96a3ef3000-7f96a3ff1000 rw-p 00000000 00:00 0 
+7f96a3ff1000-7f96a3ff4000 ---p 00000000 00:00 0 
+7f96a3ff4000-7f96a40f2000 rw-p 00000000 00:00 0 
+7f96a40f2000-7f96a40f5000 ---p 00000000 00:00 0 
+7f96a40f5000-7f96a43f3000 rw-p 00000000 00:00 0 
+7f96a44f4000-7f96a44f7000 ---p 00000000 00:00 0 
+7f96a44f7000-7f96a45f5000 rw-p 00000000 00:00 0 
+7f96a47f7000-7f96a47fa000 ---p 00000000 00:00 0 
+7f96a47fa000-7f96a48f8000 rw-p 00000000 00:00 0 
+7f96a48f8000-7f96a48fb000 ---p 00000000 00:00 0 
+7f96a48fb000-7f96a49f9000 rw-p 00000000 00:00 0 
+7f96a49f9000-7f96a49fc000 ---p 00000000 00:00 0 
+7f96a49fc000-7f96a4afa000 rw-p 00000000 00:00 0 
+7f96a4afa000-7f96a4afd000 ---p 00000000 00:00 0 
+7f96a4afd000-7f96a4bfb000 rw-p 00000000 00:00 0 
+7f96a4bfb000-7f96a4bfe000 ---p 00000000 00:00 0 
+7f96a4bfe000-7f96a4cfc000 rw-p 00000000 00:00 0 
+7f96a4fff000-7f96a5002000 ---p 00000000 00:00 0 
+7f96a5002000-7f96a5100000 rw-p 00000000 00:00 0 
+7f96a5100000-7f96a5103000 ---p 00000000 00:00 0 
+7f96a5103000-7f96a5201000 rw-p 00000000 00:00 0 
+7f96a5302000-7f96a5305000 ---p 00000000 00:00 0 
+7f96a5305000-7f96a5403000 rw-p 00000000 00:00 0 
+7f96a5403000-7f96a5406000 ---p 00000000 00:00 0 
+7f96a5406000-7f96a5504000 rw-p 00000000 00:00 0 
+7f96a5504000-7f96a5507000 ---p 00000000 00:00 0 
+7f96a5507000-7f96a5605000 rw-p 00000000 00:00 0 
+7f96a5a09000-7f96a5a0c000 ---p 00000000 00:00 0 
+7f96a5a0c000-7f96a5b0a000 rw-p 00000000 00:00 0 
+7f96a5b0a000-7f96a5b0d000 ---p 00000000 00:00 0 
+7f96a5b0d000-7f96a5c0b000 rw-p 00000000 00:00 0 
+7f96a5e0d000-7f96a5e10000 ---p 00000000 00:00 0 
+7f96a5e10000-7f96a5f0e000 rw-p 00000000 00:00 0 
+7f96a600f000-7f96a6012000 ---p 00000000 00:00 0 
+7f96a6012000-7f96a6110000 rw-p 00000000 00:00 0 
+7f96a6110000-7f96a6113000 ---p 00000000 00:00 0 
+7f96a6113000-7f96a6211000 rw-p 00000000 00:00 0 
+7f96a6312000-7f96a6315000 ---p 00000000 00:00 0 
+7f96a6315000-7f96a6413000 rw-p 00000000 00:00 0 
+7f96a6514000-7f96a6517000 ---p 00000000 00:00 0 
+7f96a6517000-7f96a6615000 rw-p 00000000 00:00 0 
+7f96a6615000-7f96a6618000 ---p 00000000 00:00 0 
+7f96a6618000-7f96a6716000 rw-p 00000000 00:00 0 
+7f96a6716000-7f96a6719000 ---p 00000000 00:00 0 
+7f96a6719000-7f96a6817000 rw-p 00000000 00:00 0 
+7f96a6918000-7f96a691b000 ---p 00000000 00:00 0 
+7f96a691b000-7f96a6a19000 rw-p 00000000 00:00 0 
+7f96a6b1a000-7f96a6b1d000 ---p 00000000 00:00 0 
+7f96a6b1d000-7f96a6e1b000 rw-p 00000000 00:00 0 
+7f96a6e1b000-7f96a6e1e000 ---p 00000000 00:00 0 
+7f96a6e1e000-7f96a6f1c000 rw-p 00000000 00:00 0 
+7f96a701d000-7f96a7020000 ---p 00000000 00:00 0 
+7f96a7020000-7f96a711e000 rw-p 00000000 00:00 0 
+7f96a711e000-7f96a7121000 ---p 00000000 00:00 0 
+7f96a7121000-7f96a721f000 rw-p 00000000 00:00 0 
+7f96a721f000-7f96a7222000 ---p 00000000 00:00 0 
+7f96a7222000-7f96a7320000 rw-p 00000000 00:00 0 
+7f96a7421000-7f96a7621000 rw-p 00000000 00:00 0 
+7f96a7621000-7f96a7821000 rw-p 00000000 00:00 0 
+7f96a7821000-7f96a7a21000 rw-p 00000000 00:00 0 
+7f96a7a21000-7f96a7a32000 r--s 00091000 08:01 661716                     /home/user/wildfly/modules/system/layers/base/com/github/ben-manes/caffeine/main/caffeine-2.6.2.jar
+7f96a7a32000-7f96a7a33000 r--s 00003000 08:01 661720                     /home/user/wildfly/modules/system/layers/base/com/github/relaxng/main/relaxng-datatype-2.3.1.jar
+7f96a7a33000-7f96a7a35000 r--s 00006000 08:01 155760                     /home/user/wildfly/modules/system/layers/base/org/jboss/jaxbintros/main/jboss-jaxb-intros-1.0.2.GA.jar
+7f96a7a35000-7f96a7a37000 r--s 00002000 08:01 155584                     /home/user/wildfly/modules/system/layers/base/org/eclipse/microprofile/restclient/main/microprofile-rest-client-api-1.0.1.jar
+7f96a7a37000-7f96a7a3e000 r--s 00049000 08:01 1189269                    /home/user/wildfly/modules/system/layers/base/org/apache/httpcomponents/core/main/httpcore-4.4.5.jar
+7f96a7a3e000-7f96a7a4b000 r--s 000b2000 08:01 1189267                    /home/user/wildfly/modules/system/layers/base/org/apache/httpcomponents/core/main/httpclient-4.5.4.jar
+7f96a7a4b000-7f96a7a4d000 r--s 00009000 08:01 1189272                    /home/user/wildfly/modules/system/layers/base/org/apache/httpcomponents/main/httpmime-4.5.4.jar
+7f96a7a4d000-7f96a7a50000 r--s 00029000 08:01 1189271                    /home/user/wildfly/modules/system/layers/base/org/apache/httpcomponents/main/httpasyncclient-4.1.4.jar
+7f96a7a50000-7f96a7a57000 r--s 00050000 08:01 1189273                    /home/user/wildfly/modules/system/layers/base/org/apache/httpcomponents/main/httpcore-nio-4.4.5.jar
+7f96a7a57000-7f96a7a5e000 r--s 0003f000 08:01 1189287                    /home/user/wildfly/modules/system/layers/base/org/apache/commons/codec/main/commons-codec-1.10.jar
+7f96a7a5e000-7f96a7a63000 r--s 002f9000 08:01 1069026                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar
+7f96a7a63000-7f96a7a65000 r--s 00012000 08:01 155555                     /home/user/wildfly/modules/system/layers/base/asm/asm/main/asm-util-6.2.1.jar
+7f96a7a65000-7f96a7a67000 r--s 0001a000 08:01 155556                     /home/user/wildfly/modules/system/layers/base/asm/asm/main/asm-6.2.1.jar
+7f96a7a67000-7f96a7aad000 r--s 002d2000 08:01 155557                     /home/user/wildfly/modules/system/layers/base/net/bytebuddy/main/byte-buddy-1.9.5.jar
+7f96a7aad000-7f96a7aaf000 r--s 00008000 08:01 155924                     /home/user/wildfly/modules/system/layers/base/ch/qos/cal10n/main/cal10n-api-0.8.1.jar
+7f96a7aaf000-7f96a7ab1000 r--s 0000d000 08:01 1058872                    /home/user/wildfly/modules/system/layers/base/org/infinispan/hibernate-cache/main/infinispan-hibernate-cache-v53-9.4.8.Final.jar
+7f96a7ab1000-7f96a7ab5000 r--s 00020000 08:01 1058871                    /home/user/wildfly/modules/system/layers/base/org/infinispan/hibernate-cache/main/infinispan-hibernate-cache-commons-9.4.8.Final.jar
+7f96a7ab5000-7f96a7ab7000 r--s 00009000 08:01 278002                     /home/user/wildfly/modules/system/layers/base/org/slf4j/ext/main/slf4j-ext-1.7.22.jbossorg-1.jar
+7f96a7ab7000-7f96a7ab9000 r--s 00000000 08:01 1058874                    /home/user/wildfly/modules/system/layers/base/org/infinispan/hibernate-cache/main/infinispan-hibernate-cache-spi-9.4.8.Final.jar
+7f96a7ab9000-7f96a7aba000 r--s 00002000 08:01 155900                     /home/user/wildfly/modules/system/layers/base/org/slf4j/impl/main/slf4j-jboss-logmanager-1.0.3.GA.jar
+7f96a7aba000-7f96a7abb000 r--s 00001000 08:01 661694                     /home/user/wildfly/modules/system/layers/base/org/hibernate/jipijapa-hibernate5-3/main/jipijapa-hibernate5-3-legacy-16.0.0.Final.jar
+7f96a7abb000-7f96a7abf000 r--s 00015000 08:01 661697                     /home/user/wildfly/modules/system/layers/base/org/hibernate/jipijapa-hibernate5-3/main/jipijapa-hibernate5-3-16.0.0.Final.jar
+7f96a7abf000-7f96a7ac2000 r--s 00010000 08:01 661683                     /home/user/wildfly/modules/system/layers/base/org/hibernate/commons-annotations/main/hibernate-commons-annotations-5.0.5.Final.jar
+7f96a7ac2000-7f96a7ac4000 r--s 00009000 08:01 155902                     /home/user/wildfly/modules/system/layers/base/org/slf4j/main/slf4j-api-1.7.22.jbossorg-1.jar
+7f96a7ac4000-7f96a7ac9000 r--s 0004b000 08:01 155570                     /home/user/wildfly/modules/system/layers/base/org/dom4j/main/dom4j-2.1.1.jar
+7f96a7ac9000-7f96a7aca000 r--s 00000000 08:01 539954                     /home/user/wildfly/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main/jul-to-slf4j-stub-1.0.1.Final.jar
+7f96a7aca000-7f96a7acf000 r--s 00068000 08:01 155905                     /home/user/wildfly/modules/system/layers/base/org/antlr/main/antlr-2.7.7.jar
+7f96a7acf000-7f96a7ada000 r--s 00071000 08:01 155752                     /home/user/wildfly/modules/system/layers/base/org/jboss/security/xacml/main/jbossxacml-2.0.8.Final.jar
+7f96a7ada000-7f96a7adc000 r--s 00003000 08:01 539958                     /home/user/wildfly/modules/system/layers/base/org/jboss/logging/commons/logging/main/commons-logging-jboss-logging-1.0.0.Final.jar
+7f96a7adc000-7f96a7ade000 r--s 0000e000 08:01 1189365                    /home/user/wildfly/modules/system/layers/base/com/fasterxml/classmate/main/classmate-1.3.4.jar
+7f96a7ade000-7f96a7cde000 rw-p 00000000 00:00 0 
+7f96a7cde000-7f96a7cdf000 r--s 00000000 08:01 155651                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/jgroups/api/main/wildfly-clustering-jgroups-api-16.0.0.Final.jar
+7f96a7cdf000-7f96a7ce2000 r--s 00016000 08:01 278007                     /home/user/wildfly/modules/system/layers/base/org/jgroups/kubernetes/main/jgroups-kubernetes-1.0.6.Final.jar
+7f96a7ce2000-7f96a7ce3000 r--s 00001000 08:01 278005                     /home/user/wildfly/modules/system/layers/base/org/jgroups/azure/main/jgroups-azure-1.2.0.Final.jar
+7f96a7ce3000-7f96a7ee3000 rw-p 00000000 00:00 0 
+7f96a7ee3000-7f96a7ee6000 r--s 00018000 08:01 1189247                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/protocol/stomp/main/artemis-stomp-protocol-2.6.3.jbossorg-00014.jar
+7f96a7ee6000-7f96a7ee7000 r--s 00003000 08:01 1189249                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/protocol/hornetq/main/artemis-hornetq-protocol-2.6.3.jbossorg-00014.jar
+7f96a7ee7000-7f96a7eec000 r--s 0002e000 08:01 1189246                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/protocol/amqp/main/artemis-amqp-protocol-2.6.3.jbossorg-00014.jar
+7f96a7eec000-7f96a7ef1000 r--s 00038000 08:01 1189298                    /home/user/wildfly/modules/system/layers/base/org/apache/commons/beanutils/main/commons-beanutils-1.9.3.jar
+7f96a7ef1000-7f96a7ef6000 r--s 0001f000 08:01 155659                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/web/infinispan/main/wildfly-clustering-web-infinispan-16.0.0.Final.jar
+7f96a7ef6000-7f96a7efc000 r--s 0002c000 08:01 155673                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/server/main/wildfly-clustering-server-16.0.0.Final.jar
+7f96a7efc000-7f96a7f00000 r--s 00014000 08:01 155688                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/ejb/infinispan/main/wildfly-clustering-ejb-infinispan-16.0.0.Final.jar
+7f96a7f00000-7f96a7f02000 r--s 00002000 08:01 155781                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main/resteasy-yaml-provider-3.6.3.Final.jar
+7f96a7f02000-7f96a7f04000 r--s 00003000 08:01 155850                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/weld/transactions/main/wildfly-weld-transactions-16.0.0.Final.jar
+7f96a7f04000-7f96a7f07000 r--s 00013000 08:01 155770                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-3.6.3.Final.jar
+7f96a7f07000-7f96a7f09000 r--s 00003000 08:01 155846                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/weld/webservices/main/wildfly-weld-webservices-16.0.0.Final.jar
+7f96a7f09000-7f96a8109000 rw-p 00000000 00:00 0 
+7f96a8109000-7f96a810b000 r--s 00008000 08:01 155779                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main/resteasy-jsapi-3.6.3.Final.jar
+7f96a810b000-7f96a810c000 r--s 00004000 08:01 155843                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/weld/beanvalidation/main/wildfly-weld-bean-validation-16.0.0.Final.jar
+7f96a810c000-7f96a810e000 r--s 00009000 08:01 155790                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main/resteasy-jettison-provider-3.6.3.Final.jar
+7f96a810e000-7f96a810f000 r--s 00004000 08:01 155847                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/weld/jpa/main/wildfly-weld-jpa-16.0.0.Final.jar
+7f96a810f000-7f96a8110000 r--s 00006000 08:01 1189235                    /home/user/wildfly/modules/system/layers/base/org/codehaus/jackson/jackson-xc/main/jackson-xc-1.9.13.jar
+7f96a8110000-7f96a811f000 r--s 001a7000 08:01 1059522                    /home/user/wildfly/modules/system/layers/base/com/h2database/h2/main/h2-1.4.193.jar
+7f96a811f000-7f96a8121000 r--s 0000a000 08:01 155858                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/weld/ejb/main/wildfly-weld-ejb-16.0.0.Final.jar
+7f96a8121000-7f96a812d000 r--s 000e0000 08:01 155619                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/elytron/main/wildfly-elytron-integration-8.0.0.Final.jar
+7f96a812d000-7f96a812e000 r--s 00004000 08:01 155853                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/weld/spi/main/wildfly-weld-spi-16.0.0.Final.jar
+7f96a812e000-7f96a8131000 r--s 0001f000 08:01 1058868                    /home/user/wildfly/modules/system/layers/base/org/hornetq/client/main/hornetq-jms-client-2.4.7.Final.jar
+7f96a8131000-7f96a813b000 r--s 00081000 08:01 1058867                    /home/user/wildfly/modules/system/layers/base/org/hornetq/client/main/hornetq-core-client-2.4.7.Final.jar
+7f96a813b000-7f96a813f000 r--s 00019000 08:01 1058865                    /home/user/wildfly/modules/system/layers/base/org/hornetq/client/main/hornetq-commons-2.4.7.Final.jar
+7f96a813f000-7f96a8171000 r--s 0026b000 08:01 394043                     /home/user/wildfly/modules/system/layers/base/com/google/guava/main/guava-25.0-jre.jar
+7f96a8171000-7f96a817f000 r--s 000b1000 08:01 1189238                    /home/user/wildfly/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl/main/jackson-mapper-asl-1.9.13.jar
+7f96a817f000-7f96a8181000 r--s 0000d000 08:01 155814                     /home/user/wildfly/modules/system/layers/base/org/jboss/xnio/netty/netty-xnio-transport/main/netty-xnio-transport-0.1.6.Final.jar
+7f96a8181000-7f96a8185000 r--s 00035000 08:01 1189231                    /home/user/wildfly/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl/main/jackson-core-asl-1.9.13.jar
+7f96a8185000-7f96a8186000 r--s 00001000 08:01 661624                     /home/user/wildfly/modules/system/layers/base/org/jboss/ejb3/main/jboss-ejb3-ext-api-2.3.0.Final.jar
+7f96a8186000-7f96a8187000 r--s 00001000 08:01 155787                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main/resteasy-jackson-provider-3.6.3.Final.jar
+7f96a8187000-7f96a818a000 r--s 00025000 08:01 1189251                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/ra/main/artemis-ra-2.6.3.jbossorg-00014.jar
+7f96a818a000-7f96a818b000 r--s 00004000 08:01 155677                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/singleton/main/wildfly-clustering-singleton-api-16.0.0.Final.jar
+7f96a818b000-7f96a818d000 r--s 00001000 08:01 155686                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/ejb/spi/main/wildfly-clustering-ejb-spi-16.0.0.Final.jar
+7f96a818d000-7f96a818e000 r--s 00008000 08:01 1189239                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/journal/main/artemis-native-2.6.3.jbossorg-00014.jar
+7f96a818e000-7f96a8192000 r--s 00032000 08:01 1189240                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/journal/main/artemis-journal-2.6.3.jbossorg-00014.jar
+7f96a8192000-7f96a8194000 r--s 00003000 08:01 155679                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/api/main/wildfly-clustering-api-16.0.0.Final.jar
+7f96a8194000-7f96a819f000 r--s 000b2000 08:01 155565                     /home/user/wildfly/modules/system/layers/base/org/javassist/main/javassist-3.23.1-GA.jar
+7f96a819f000-7f96a81a1000 r--s 00008000 08:01 1059199                    /home/user/wildfly/modules/system/layers/base/javax/xml/rpc/api/main/jboss-jaxrpc-api_1.1_spec-1.0.2.Final.jar
+7f96a81a1000-7f96a81a9000 r--s 00040000 08:01 1189244                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/journal/main/artemis-commons-2.6.3.jbossorg-00014.jar
+7f96a81a9000-7f96a81ae000 r--s 00038000 08:01 155827                     /home/user/wildfly/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main/ironjacamar-jdbc-1.4.12.Final.jar
+7f96a81ae000-7f96a81b3000 r--s 0001e000 08:01 661532                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/spi/main/jbossws-spi-3.2.3.Final.jar
+7f96a81b3000-7f96a81b5000 r--s 00010000 08:01 155824                     /home/user/wildfly/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-validator-1.4.12.Final.jar
+7f96a81b5000-7f96a81b7000 r--s 00002000 08:01 155702                     /home/user/wildfly/modules/system/layers/base/org/wildfly/microprofile/opentracing-smallrye/main/wildfly-microprofile-opentracing-smallrye-16.0.0.Final.jar
+7f96a81b7000-7f96a81b8000 r--s 0000f000 08:01 155826                     /home/user/wildfly/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-deployers-common-1.4.12.Final.jar
+7f96a81b8000-7f96a81b9000 r--s 00003000 08:01 1058525                    /home/user/wildfly/modules/system/layers/base/org/hibernate/bytecodetransformer/main/wildfly-ormtransformer-16.0.0.Final.jar
+7f96a81b9000-7f96a81be000 r--s 00011000 08:01 155731                     /home/user/wildfly/modules/system/layers/base/org/jboss/weld/spi/main/weld-spi-3.1.Final.jar
+7f96a81be000-7f96a81c1000 r--s 00015000 08:01 155793                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-3.6.3.Final.jar
+7f96a81c1000-7f96a81c7000 r--s 00038000 08:01 541806                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/common/main/jbossws-common-3.2.2.Final.jar
+7f96a81c7000-7f96a81d0000 r--s 00072000 08:01 155822                     /home/user/wildfly/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-core-impl-1.4.12.Final.jar
+7f96a81d0000-7f96a81d1000 r--s 00003000 08:01 1189256                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-tools-2.6.3.jbossorg-00014.jar
+7f96a81d1000-7f96a81d5000 r--s 0003b000 08:01 155823                     /home/user/wildfly/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-common-impl-1.4.12.Final.jar
+7f96a81d5000-7f96a81e0000 r--s 0006c000 08:01 1058528                    /home/user/wildfly/modules/system/layers/base/org/hibernate/main/hibernate-envers-5.3.9.Final.jar
+7f96a81e0000-7f96a8200000 r--s 0028f000 08:01 543019                     /home/user/wildfly/modules/system/layers/base/com/sun/jsf-impl/main/jsf-impl-2.3.9.SP01.jar
+7f96a8200000-7f96a8203000 r--s 00017000 08:01 155800                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-crypto/main/resteasy-crypto-3.6.3.Final.jar
+7f96a8203000-7f96a8205000 r--s 00007000 08:01 1189253                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-service-extensions-2.6.3.jbossorg-00014.jar
+7f96a8205000-7f96a8209000 r--s 0001c000 08:01 1189264                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-jms-server-2.6.3.jbossorg-00014.jar
+7f96a8209000-7f96a820c000 r--s 0000b000 08:01 661552                     /home/user/wildfly/modules/system/layers/base/org/jboss/ws/api/main/jbossws-api-1.1.2.Final.jar
+7f96a820c000-7f96a8210000 r--s 00029000 08:01 1189257                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-jms-client-2.6.3.jbossorg-00014.jar
+7f96a8210000-7f96a8211000 r--s 00008000 08:01 155799                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main/resteasy-cdi-3.6.3.Final.jar
+7f96a8211000-7f96a8212000 r--s 00006000 08:01 393991                     /home/user/wildfly/modules/system/layers/base/org/jboss/metadata/appclient/main/jboss-metadata-appclient-13.0.0.Final.jar
+7f96a8212000-7f96a8214000 r--s 00017000 08:01 1189261                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-jdbc-store-2.6.3.jbossorg-00014.jar
+7f96a8214000-7f96a8217000 r--s 00010000 08:01 155696                     /home/user/wildfly/modules/system/layers/base/org/wildfly/http-client/common/main/wildfly-http-client-common-1.0.13.Final.jar
+7f96a8217000-7f96a8219000 r--s 0000b000 08:01 542164                     /home/user/wildfly/modules/system/layers/base/javax/servlet/jstl/api/main/taglibs-standard-compat-1.2.6-RC1.jar
+7f96a8219000-7f96a821a000 r--s 00004000 08:01 1189255                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-hqclient-protocol-2.6.3.jbossorg-00014.jar
+7f96a821a000-7f96a821f000 r--s 0002e000 08:01 542175                     /home/user/wildfly/modules/system/layers/base/javax/servlet/jstl/api/main/taglibs-standard-impl-1.2.6-RC1.jar
+7f96a821f000-7f96a8223000 r--s 0000a000 08:01 155831                     /home/user/wildfly/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-core-api-1.4.12.Final.jar
+7f96a8223000-7f96a8226000 r--s 0000a000 08:01 155802                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main/resteasy-atom-provider-3.6.3.Final.jar
+7f96a8226000-7f96a8228000 r--s 00005000 08:01 1189262                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-dto-2.6.3.jbossorg-00014.jar
+7f96a8228000-7f96a822a000 r--s 00008000 08:01 542170                     /home/user/wildfly/modules/system/layers/base/javax/servlet/jstl/api/main/taglibs-standard-spec-1.2.6-RC1.jar
+7f96a822a000-7f96a8230000 r--s 00042000 08:01 1189263                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-cli-2.6.3.jbossorg-00014.jar
+7f96a8230000-7f96a8232000 r--s 0000a000 08:01 277961                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/web-common/main/wildfly-web-common-16.0.0.Final.jar
+7f96a8232000-7f96a8234000 r--s 00000000 08:01 155830                     /home/user/wildfly/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-spi-1.4.12.Final.jar
+7f96a8234000-7f96a8238000 r--s 00033000 08:01 155829                     /home/user/wildfly/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-api-1.4.12.Final.jar
+7f96a8238000-7f96a823b000 r--s 00011000 08:01 155729                     /home/user/wildfly/modules/system/layers/base/org/jboss/weld/core/main/weld-web-3.1.0.Final.jar
+7f96a823b000-7f96a823d000 r--s 00004000 08:01 155726                     /home/user/wildfly/modules/system/layers/base/org/jboss/weld/core/main/weld-jta-3.1.0.Final.jar
+7f96a823d000-7f96a823f000 r--s 00009000 08:01 1059171                    /home/user/wildfly/modules/system/layers/base/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.6.Final.jar
+7f96a823f000-7f96a8241000 r--s 00004000 08:01 276290                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/jpa/spi/main/jipijapa-spi-16.0.0.Final.jar
+7f96a8241000-7f96a825b000 r--s 00184000 08:01 1189260                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-server-2.6.3.jbossorg-00014.jar
+7f96a825b000-7f96a825d000 r--s 00018000 08:01 1189254                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-selector-2.6.3.jbossorg-00014.jar
+7f96a825d000-7f96a825f000 r--s 00003000 08:01 661712                     /home/user/wildfly/modules/system/layers/base/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.2.Final.jar
+7f96a825f000-7f96a8261000 r--s 00001000 08:01 394001                     /home/user/wildfly/modules/system/layers/base/org/jboss/iiop-client/main/jboss-iiop-client-1.0.1.Final.jar
+7f96a8261000-7f96a826f000 r--s 0009d000 08:01 1189258                    /home/user/wildfly/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-core-client-2.6.3.jbossorg-00014.jar
+7f96a826f000-7f96a827c000 r--s 000ab000 08:01 155938                     /home/user/wildfly/modules/system/layers/base/javax/faces/api/main/jboss-jsf-api_2.3_spec-2.3.9.SP01.jar
+7f96a827c000-7f96a8280000 r--s 0001d000 08:01 1059200                    /home/user/wildfly/modules/system/layers/base/javax/xml/bind/api/main/jboss-jaxb-api_2.3_spec-1.0.1.Final.jar
+7f96a8280000-7f96a8283000 r--s 0000f000 08:01 1059226                    /home/user/wildfly/modules/system/layers/base/javax/xml/ws/api/main/jboss-jaxws-api_2.3_spec-1.0.0.Final.jar
+7f96a8283000-7f96a8285000 r--s 0000e000 08:01 155727                     /home/user/wildfly/modules/system/layers/base/org/jboss/weld/core/main/weld-ejb-3.1.0.Final.jar
+7f96a8285000-7f96a82a4000 r--s 00179000 08:01 155728                     /home/user/wildfly/modules/system/layers/base/org/jboss/weld/core/main/weld-core-impl-3.1.0.Final.jar
+7f96a82a4000-7f96a82c1000 r--s 000fe000 08:01 661691                     /home/user/wildfly/modules/system/layers/base/org/hibernate/validator/main/hibernate-validator-6.0.15.Final.jar
+7f96a82c1000-7f96a8344000 r--s 00626000 08:01 1058526                    /home/user/wildfly/modules/system/layers/base/org/hibernate/main/hibernate-core-5.3.9.Final.jar
+7f96a8344000-7f96a8347000 r--s 0000a000 08:01 1189355                    /home/user/wildfly/modules/system/layers/base/javax/jms/api/main/jboss-jms-api_2.0_spec-1.0.2.Final.jar
+7f96a8347000-7f96a8349000 r--s 00008000 08:01 155694                     /home/user/wildfly/modules/system/layers/base/org/wildfly/http-client/transaction/main/wildfly-http-transaction-client-1.0.13.Final.jar
+7f96a8349000-7f96a834b000 r--s 00009000 08:01 155641                     /home/user/wildfly/modules/system/layers/base/org/wildfly/security/elytron-web/undertow-server-servlet/main/undertow-server-servlet-1.4.0.Final.jar
+7f96a834b000-7f96a836b000 r--s 0018a000 08:01 155740                     /home/user/wildfly/modules/system/layers/base/org/jboss/jts/main/narayana-jts-idlj-5.9.3.Final.jar
+7f96a836b000-7f96a856b000 rw-p 00000000 00:00 0 
+7f96a856b000-7f96a856e000 r--s 00006000 08:01 542926                     /home/user/wildfly/modules/system/layers/base/javax/security/enterprise/api/main/javax.security.enterprise-api-1.0.jar
+7f96a856e000-7f96a8571000 r--s 0001d000 08:01 661700                     /home/user/wildfly/modules/system/layers/base/org/glassfish/soteria/main/javax.security.enterprise-1.0.jar
+7f96a8571000-7f96a857b000 r--s 00070000 08:01 393996                     /home/user/wildfly/modules/system/layers/base/org/jboss/metadata/common/main/jboss-metadata-common-13.0.0.Final.jar
+7f96a857b000-7f96a857d000 r--s 0000d000 08:01 155700                     /home/user/wildfly/modules/system/layers/base/org/wildfly/http-client/ejb/main/wildfly-http-ejb-client-1.0.13.Final.jar
+7f96a857d000-7f96a857e000 r--s 00000000 08:01 155867                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/webservices/main/jbossws-cxf-resources-5.2.4.Final-wildfly1400.jar
+7f96a857e000-7f96a8581000 r--s 0000e000 08:01 155835                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/jsr77/main/wildfly-jsr77-16.0.0.Final.jar
+7f96a8581000-7f96a8588000 r--s 0004c000 08:01 155865                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/webservices/main/wildfly-webservices-server-integration-16.0.0.Final.jar
+7f96a8588000-7f96a8594000 r--s 00083000 08:01 155880                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/ee/main/wildfly-ee-16.0.0.Final.jar
+7f96a8594000-7f96a85dd000 r--s 003f3000 08:01 1058997                    /home/user/wildfly/modules/system/layers/base/org/infinispan/main/infinispan-core-9.4.8.Final.jar
+7f96a85dd000-7f96a85fb000 r--s 0015f000 08:01 276405                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/cli/main/wildfly-cli-8.0.0.Final.jar
+7f96a8b00000-7f96a8b03000 ---p 00000000 00:00 0 
+7f96a8b03000-7f96a8c01000 rw-p 00000000 00:00 0 
+7f96a8c01000-7f96a8c04000 ---p 00000000 00:00 0 
+7f96a8c04000-7f96a8d02000 rw-p 00000000 00:00 0 
+7f96a8f04000-7f96a8f07000 ---p 00000000 00:00 0 
+7f96a8f07000-7f96a9005000 rw-p 00000000 00:00 0 
+7f96a9106000-7f96a9109000 ---p 00000000 00:00 0 
+7f96a9109000-7f96a9207000 rw-p 00000000 00:00 0 
+7f96a9207000-7f96a9208000 r--s 00001000 08:01 394029                     /home/user/wildfly/modules/system/layers/base/javax/jws/api/main/jsr181-api-1.0-MR1.jar
+7f96a9208000-7f96a920b000 r--s 0000a000 08:01 155737                     /home/user/wildfly/modules/system/layers/base/org/jboss/jts/integration/main/narayana-jts-integration-5.9.3.Final.jar
+7f96a920b000-7f96a920c000 r--s 00006000 08:01 155774                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-validator-provider-11/main/resteasy-validator-provider-11-3.6.3.Final.jar
+7f96a920c000-7f96a9210000 r--s 00014000 08:01 155654                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/web/undertow/main/wildfly-clustering-web-undertow-16.0.0.Final.jar
+7f96a9210000-7f96a9219000 r--s 0007c000 08:01 393999                     /home/user/wildfly/modules/system/layers/base/org/jboss/metadata/ejb/main/jboss-metadata-ejb-13.0.0.Final.jar
+7f96a9219000-7f96a921a000 r--s 00006000 08:01 155785                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-client-microprofile-3.6.3.Final.jar
+7f96a921a000-7f96a921b000 r--s 00000000 08:01 155657                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/web/api/main/wildfly-clustering-web-api-16.0.0.Final.jar
+7f96a921b000-7f96a9221000 r--s 00035000 08:01 155783                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-client-3.6.3.Final.jar
+7f96a9221000-7f96a9225000 r--s 0001e000 08:01 277953                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/threads/main/wildfly-threads-8.0.0.Final.jar
+7f96a9225000-7f96a9239000 r--s 00102000 08:01 155782                     /home/user/wildfly/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-3.6.3.Final.jar
+7f96a9239000-7f96a923b000 r--s 00009000 08:01 542111                     /home/user/wildfly/modules/system/layers/base/javax/websocket/api/main/jboss-websocket-api_1.1_spec-1.1.3.Final.jar
+7f96a923b000-7f96a9241000 r--s 00023000 08:01 1059504                    /home/user/wildfly/modules/system/layers/base/javax/persistence/api/main/javax.persistence-api-2.2.jar
+7f96a9241000-7f96a9243000 r--s 0000d000 08:01 542740                     /home/user/wildfly/modules/system/layers/base/javax/servlet/jsp/api/main/jboss-jsp-api_2.3_spec-1.0.3.Final.jar
+7f96a9243000-7f96a9245000 r--s 0000b000 08:01 155933                     /home/user/wildfly/modules/system/layers/base/javax/ejb/api/main/jboss-ejb-api_3.2_spec-1.0.1.Final.jar
+7f96a9245000-7f96a924a000 r--s 0001f000 08:01 278035                     /home/user/wildfly/modules/system/layers/base/javax/ws/rs/api/main/jboss-jaxrs-api_2.1_spec-1.0.2.Final.jar
+7f96a924a000-7f96a924c000 r--s 0000a000 08:01 155852                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/weld/common/main/wildfly-weld-common-16.0.0.Final.jar
+7f96a924c000-7f96a9251000 r--s 00049000 08:01 155897                     /home/user/wildfly/modules/system/layers/base/org/jberet/jberet-core/main/jberet-core-1.3.3.Final.jar
+7f96a9251000-7f96a9254000 r--s 00006000 08:01 155734                     /home/user/wildfly/modules/system/layers/base/org/jboss/weld/api/main/weld-api-3.1.Final.jar
+7f96a9254000-7f96a9256000 r--s 00005000 08:01 661713                     /home/user/wildfly/modules/system/layers/base/javax/annotation/api/main/jboss-annotations-api_1.3_spec-1.0.1.Final.jar
+7f96a9256000-7f96a925b000 r--s 00012000 08:01 278033                     /home/user/wildfly/modules/system/layers/base/javax/validation/api/main/validation-api-2.0.1.Final.jar
+7f96a925b000-7f96a925c000 r--s 00000000 08:01 542920                     /home/user/wildfly/modules/system/layers/base/javax/inject/api/main/javax.inject-1.jar
+7f96a925c000-7f96a925e000 r--s 0000c000 08:01 1058542                    /home/user/wildfly/modules/system/layers/base/org/glassfish/javax/enterprise/concurrent/main/javax.enterprise.concurrent-1.0.jar
+7f96a925e000-7f96a9261000 r--s 00013000 08:01 661707                     /home/user/wildfly/modules/system/layers/base/javax/el/api/main/jboss-el-api_3.0_spec-1.0.13.Final.jar
+7f96a9261000-7f96a9265000 r--s 00027000 08:01 1058544                    /home/user/wildfly/modules/system/layers/base/org/glassfish/javax/el/main/javax.el-impl-3.0.1-b08-jbossorg-1.jar
+7f96a9265000-7f96a926a000 r--s 00016000 08:01 542867                     /home/user/wildfly/modules/system/layers/base/javax/enterprise/api/main/cdi-api-2.0.SP1.jar
+7f96a926a000-7f96a926c000 r--s 00005000 08:01 542859                     /home/user/wildfly/modules/system/layers/base/javax/enterprise/concurrent/api/main/jboss-concurrency-api_1.0_spec-1.0.2.Final.jar
+7f96a926c000-7f96a9276000 r--s 00070000 08:01 155884                     /home/user/wildfly/modules/system/layers/base/org/jboss/log4j/logmanager/main/log4j-jboss-logmanager-1.1.6.Final.jar
+7f96a9276000-7f96a92bf000 r--s 003a2000 08:01 1189360                    /home/user/wildfly/modules/system/layers/base/javax/orb/api/main/openjdk-orb-8.1.2.Final.jar
+7f96a92bf000-7f96a92c3000 r--s 0000f000 08:01 1189358                    /home/user/wildfly/modules/system/layers/base/javax/resource/api/main/jboss-connector-api_1.7_spec-1.0.1.Final.jar
+7f96a92c3000-7f96a92c5000 r--s 00013000 08:01 155648                     /home/user/wildfly/modules/system/layers/base/org/wildfly/discovery/main/wildfly-discovery-client-1.1.1.Final.jar
+7f96a92c5000-7f96a92cb000 r--s 00050000 08:01 155638                     /home/user/wildfly/modules/system/layers/base/org/wildfly/iiop-openjdk/main/wildfly-iiop-openjdk-16.0.0.Final.jar
+7f96a92cb000-7f96a92cd000 r--s 00003000 08:01 155935                     /home/user/wildfly/modules/system/layers/base/javax/interceptor/api/main/jboss-interceptors-api_1.2_spec-1.0.1.Final.jar
+7f96a92cd000-7f96a92cf000 r--s 00002000 08:01 155582                     /home/user/wildfly/modules/system/layers/base/org/eclipse/microprofile/health/api/main/microprofile-health-api-1.0.jar
+7f96a92cf000-7f96a92d1000 r--s 00002000 08:01 155675                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/spi/main/wildfly-clustering-spi-16.0.0.Final.jar
+7f96a92d1000-7f96a92d3000 r--s 00006000 08:01 155666                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/marshalling/jboss/main/wildfly-clustering-marshalling-jboss-16.0.0.Final.jar
+7f96a92d3000-7f96a92d5000 r--s 00000000 08:01 155672                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/marshalling/infinispan/main/wildfly-clustering-marshalling-infinispan-16.0.0.Final.jar
+7f96a92d5000-7f96a92d7000 r--s 0000d000 08:01 155668                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/marshalling/spi/main/wildfly-clustering-marshalling-spi-16.0.0.Final.jar
+7f96a92d7000-7f96a92d8000 r--s 00000000 08:01 155670                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/marshalling/api/main/wildfly-clustering-marshalling-api-16.0.0.Final.jar
+7f96a92d8000-7f96a92da000 r--s 00001000 08:01 155649                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/jgroups/spi/main/wildfly-clustering-jgroups-spi-16.0.0.Final.jar
+7f96a92da000-7f96a92dc000 r--s 00003000 08:01 155662                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/ee/spi/main/wildfly-clustering-ee-spi-16.0.0.Final.jar
+7f96a92dc000-7f96a92dd000 r--s 00003000 08:01 155663                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/ee/infinispan/main/wildfly-clustering-ee-infinispan-16.0.0.Final.jar
+7f96a92dd000-7f96a92de000 r--s 00000000 08:01 661660                     /home/user/wildfly/modules/system/layers/base/org/reactivestreams/main/reactive-streams-1.0.2.jar
+7f96a92de000-7f96a92e1000 r--s 0000a000 08:01 155683                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/service/main/wildfly-clustering-service-16.0.0.Final.jar
+7f96a92e1000-7f96a92e4000 r--s 0000c000 08:01 155681                     /home/user/wildfly/modules/system/layers/base/org/wildfly/clustering/infinispan/spi/main/wildfly-clustering-infinispan-spi-16.0.0.Final.jar
+7f96a92e4000-7f96a92fb000 r--s 0021a000 08:01 278008                     /home/user/wildfly/modules/system/layers/base/org/jgroups/main/jgroups-4.0.18.Final.jar
+7f96a92fb000-7f96a92fd000 r--s 0000f000 08:01 661709                     /home/user/wildfly/modules/system/layers/base/javax/activation/api/main/activation-1.1.1.jar
+7f96a92fd000-7f96a92ff000 r--s 00007000 08:01 155833                     /home/user/wildfly/modules/system/layers/base/org/jboss/jboss-transaction-spi/main/jboss-transaction-spi-7.6.0.Final.jar
+7f96a92ff000-7f96a9301000 r--s 00007000 08:01 155754                     /home/user/wildfly/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-spnego-3.0.5.Final.jar
+7f96a9301000-7f96a9302000 r--s 00003000 08:01 155755                     /home/user/wildfly/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-ntlm-3.0.5.Final.jar
+7f96a9302000-7f96a9304000 r--s 0000a000 08:01 155756                     /home/user/wildfly/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-extras-3.0.5.Final.jar
+7f96a9304000-7f96a9306000 r--s 00009000 08:01 155753                     /home/user/wildfly/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-common-3.0.5.Final.jar
+7f96a9306000-7f96a930f000 r--s 00052000 08:01 275830                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/clustering/jgroups/main/wildfly-clustering-jgroups-extension-16.0.0.Final.jar
+7f96a930f000-7f96a9311000 r--s 00011000 08:01 393993                     /home/user/wildfly/modules/system/layers/base/org/jboss/metadata/ear/main/jboss-metadata-ear-13.0.0.Final.jar
+7f96a9311000-7f96a9317000 r--s 00028000 08:01 275832                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/clustering/common/main/wildfly-clustering-common-16.0.0.Final.jar
+7f96a9317000-7f96a931e000 r--s 00074000 08:01 393989                     /home/user/wildfly/modules/system/layers/base/org/jboss/metadata/web/main/jboss-metadata-web-13.0.0.Final.jar
+7f96a931e000-7f96a9322000 r--s 00028000 08:01 394014                     /home/user/wildfly/modules/system/layers/base/io/undertow/websocket/main/undertow-websockets-jsr-2.0.19.Final.jar
+7f96a9322000-7f96a932e000 r--s 0008c000 08:01 1059010                    /home/user/wildfly/modules/system/layers/base/org/infinispan/client/hotrod/main/infinispan-client-hotrod-9.4.8.Final.jar
+7f96a932e000-7f96a9331000 r--s 00015000 08:01 1058935                    /home/user/wildfly/modules/system/layers/base/org/infinispan/persistence/remote/main/infinispan-cachestore-remote-9.4.8.Final.jar
+7f96a9331000-7f96a9339000 r--s 00091000 08:01 394021                     /home/user/wildfly/modules/system/layers/base/io/undertow/jsp/main/jastow-2.0.7.Final.jar
+7f96a9339000-7f96a9345000 r--s 00079000 08:01 1058875                    /home/user/wildfly/modules/system/layers/base/org/infinispan/commons/main/infinispan-commons-9.4.8.Final.jar
+7f96a9345000-7f96a9348000 r--s 0001c000 08:01 1058881                    /home/user/wildfly/modules/system/layers/base/org/infinispan/persistence/jdbc/main/infinispan-cachestore-jdbc-9.4.8.Final.jar
+7f96a9348000-7f96a934f000 r--s 00048000 08:01 1058852                    /home/user/wildfly/modules/system/layers/base/org/aesh/main/aesh-1.11.jar
+7f96a934f000-7f96a9355000 r--s 00049000 08:01 1058854                    /home/user/wildfly/modules/system/layers/base/org/aesh/main/aesh-readline-1.14.jar
+7f96a9355000-7f96a9357000 r--s 00004000 08:01 155578                     /home/user/wildfly/modules/system/layers/base/org/eclipse/microprofile/metrics/api/main/microprofile-metrics-api-1.1.jar
+7f96a9357000-7f96a9358000 r--s 00000000 08:01 155560                     /home/user/wildfly/modules/system/layers/base/net/jcip/main/jcip-annotations-1.0.jar
+7f96a9358000-7f96a935b000 r--s 00026000 08:01 1058851                    /home/user/wildfly/modules/system/layers/base/org/aesh/main/aesh-extensions-1.6.jar
+7f96a935b000-7f96a9363000 r--s 00099000 08:01 661706                     /home/user/wildfly/modules/system/layers/base/javax/mail/api/main/javax.mail-1.6.2.jar
+7f96a9363000-7f96a9366000 r--s 00009000 08:01 155632                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/messaging-activemq/main/artemis-wildfly-integration-1.0.2.jar
+7f96a9366000-7f96a9370000 r--s 00078000 08:01 394016                     /home/user/wildfly/modules/system/layers/base/io/undertow/servlet/main/undertow-servlet-2.0.19.Final.jar
+7f96a9370000-7f96a937d000 r--s 000c7000 08:01 155615                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/undertow/main/wildfly-undertow-16.0.0.Final.jar
+7f96a937d000-7f96a93af000 r--s 00206000 08:01 394027                     /home/user/wildfly/modules/system/layers/base/io/reactivex/rxjava2/rxjava/main/rxjava-2.2.2.jar
+7f96a93af000-7f96a93b2000 r--s 00015000 08:01 278022                     /home/user/wildfly/modules/system/layers/base/io/smallrye/metrics/main/smallrye-metrics-1.1.3.jar
+7f96a93b2000-7f96a93b4000 r--s 00001000 08:01 278027                     /home/user/wildfly/modules/system/layers/base/io/smallrye/health/main/smallrye-health-1.0.2.jar
+7f96a93b4000-7f96a93b7000 r--s 00010000 08:01 155875                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/mail/main/wildfly-mail-16.0.0.Final.jar
+7f96a93b7000-7f96a93ba000 ---p 00000000 00:00 0 
+7f96a93ba000-7f96a94b8000 rw-p 00000000 00:00 0 
+7f96a96ba000-7f96a96bd000 ---p 00000000 00:00 0 
+7f96a96bd000-7f96a97bb000 rw-p 00000000 00:00 0 
+7f96a98bc000-7f96a98bf000 ---p 00000000 00:00 0 
+7f96a98bf000-7f96a99bd000 rw-p 00000000 00:00 0 
+7f96a99bd000-7f96a99c0000 ---p 00000000 00:00 0 
+7f96a99c0000-7f96a9abe000 rw-p 00000000 00:00 0 
+7f96a9abe000-7f96a9ac1000 ---p 00000000 00:00 0 
+7f96a9ac1000-7f96a9bbf000 rw-p 00000000 00:00 0 
+7f96a9bbf000-7f96a9bc2000 ---p 00000000 00:00 0 
+7f96a9bc2000-7f96a9cc0000 rw-p 00000000 00:00 0 
+7f96a9dc1000-7f96a9dc4000 ---p 00000000 00:00 0 
+7f96a9dc4000-7f96a9ec2000 rw-p 00000000 00:00 0 
+7f96a9ec2000-7f96a9ec5000 ---p 00000000 00:00 0 
+7f96a9ec5000-7f96a9fc3000 rw-p 00000000 00:00 0 
+7f96a9fc3000-7f96a9fc6000 ---p 00000000 00:00 0 
+7f96a9fc6000-7f96aa0c4000 rw-p 00000000 00:00 0 
+7f96aa1c5000-7f96aa1c8000 ---p 00000000 00:00 0 
+7f96aa1c8000-7f96aa2c6000 rw-p 00000000 00:00 0 
+7f96aa2c6000-7f96aa2c9000 ---p 00000000 00:00 0 
+7f96aa2c9000-7f96aa3c7000 rw-p 00000000 00:00 0 
+7f96aa4c8000-7f96aa4cb000 ---p 00000000 00:00 0 
+7f96aa4cb000-7f96aa5c9000 rw-p 00000000 00:00 0 
+7f96aa6ca000-7f96aa6cd000 ---p 00000000 00:00 0 
+7f96aa6cd000-7f96aa7cb000 rw-p 00000000 00:00 0 
+7f96aa9cf000-7f96aaa0f000 rw-p 00000000 00:00 0 
+7f96aaa0f000-7f96aabd2000 ---p 00000000 00:00 0 
+7f96aabd2000-7f96aaed0000 rw-p 00000000 00:00 0 
+7f96aaed0000-7f96aaed3000 ---p 00000000 00:00 0 
+7f96aaed3000-7f96aafd1000 rw-p 00000000 00:00 0 
+7f96aafd1000-7f96aafd4000 ---p 00000000 00:00 0 
+7f96aafd4000-7f96ab3d2000 rw-p 00000000 00:00 0 
+7f96ab3d2000-7f96ab5d2000 rw-p 00000000 00:00 0 
+7f96ab5d2000-7f96ab5d5000 ---p 00000000 00:00 0 
+7f96ab5d5000-7f96ab6d3000 rw-p 00000000 00:00 0 
+7f96ab6d3000-7f96ab6d6000 ---p 00000000 00:00 0 
+7f96ab6d6000-7f96ab9d4000 rw-p 00000000 00:00 0 
+7f96ab9d4000-7f96abbd4000 rw-p 00000000 00:00 0 
+7f96abbd4000-7f96abbfc000 r-xp 00000000 08:01 1069019                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libsunec.so
+7f96abbfc000-7f96abdfb000 ---p 00028000 08:01 1069019                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libsunec.so
+7f96abdfb000-7f96abdff000 r--p 00027000 08:01 1069019                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libsunec.so
+7f96abdff000-7f96abe00000 rw-p 0002b000 08:01 1069019                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libsunec.so
+7f96abe00000-7f96ac000000 rw-p 00000000 00:00 0 
+7f96ac000000-7f96ad57a000 rw-p 00000000 00:00 0 
+7f96ad57a000-7f96b0000000 ---p 00000000 00:00 0 
+7f96b0000000-7f96b022c000 rw-p 00000000 00:00 0 
+7f96b022c000-7f96b4000000 ---p 00000000 00:00 0 
+7f96b4000000-7f96b4162000 rw-p 00000000 00:00 0 
+7f96b4162000-7f96b8000000 ---p 00000000 00:00 0 
+7f96b8000000-7f96ba470000 rw-p 00000000 00:00 0 
+7f96ba470000-7f96bc000000 ---p 00000000 00:00 0 
+7f96bc000000-7f96bc44a000 rw-p 00000000 00:00 0 
+7f96bc44a000-7f96c0000000 ---p 00000000 00:00 0 
+7f96c0000000-7f96c053f000 rw-p 00000000 00:00 0 
+7f96c053f000-7f96c4000000 ---p 00000000 00:00 0 
+7f96c4000000-7f96c4c0c000 rw-p 00000000 00:00 0 
+7f96c4c0c000-7f96c8000000 ---p 00000000 00:00 0 
+7f96c8000000-7f96c800c000 r--s 000b7000 08:01 155633                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/messaging-activemq/main/wildfly-messaging-activemq-16.0.0.Final.jar
+7f96c800c000-7f96c800f000 r--s 0001e000 08:01 155692                     /home/user/wildfly/modules/system/layers/base/org/wildfly/naming-client/main/wildfly-naming-client-1.0.9.Final.jar
+7f96c800f000-7f96c8013000 r--s 0002f000 08:01 1189289                    /home/user/wildfly/modules/system/layers/base/org/apache/commons/io/main/commons-io-2.5.jar
+7f96c8013000-7f96c8016000 r--s 00008000 08:01 1059488                    /home/user/wildfly/modules/system/layers/base/javax/batch/api/main/jboss-batch-api_1.0_spec-1.0.1.Final.jar
+7f96c8016000-7f96c8018000 r--s 00003000 08:01 155580                     /home/user/wildfly/modules/system/layers/base/org/eclipse/microprofile/config/api/main/microprofile-config-api-1.3.jar
+7f96c8018000-7f96c805a000 r--s 0036d000 08:01 394012                     /home/user/wildfly/modules/system/layers/base/io/netty/main/netty-all-4.1.29.Final.jar
+7f96c805a000-7f96c805b000 r--s 0000c000 08:01 1189291                    /home/user/wildfly/modules/system/layers/base/org/apache/commons/cli/main/commons-cli-1.3.1.jar
+7f96c805b000-7f96c805d000 r--s 00009000 08:01 278024                     /home/user/wildfly/modules/system/layers/base/io/smallrye/config/main/smallrye-config-1.3.4.jar
+7f96c805d000-7f96c805f000 r--s 00009000 08:01 155699                     /home/user/wildfly/modules/system/layers/base/org/wildfly/http-client/naming/main/wildfly-http-naming-client-1.0.13.Final.jar
+7f96c805f000-7f96c8061000 r--s 00008000 08:01 155600                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/security/manager/main/wildfly-security-manager-8.0.0.Final.jar
+7f96c8061000-7f96c8067000 r--s 00039000 08:01 277956                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/naming/main/wildfly-naming-16.0.0.Final.jar
+7f96c8067000-7f96c8069000 r--s 00005000 08:01 542100                     /home/user/wildfly/modules/system/layers/base/javax/transaction/api/main/jboss-transaction-api_1.2_spec-1.1.1.Final.jar
+7f96c8069000-7f96c8079000 r--s 000d7000 08:01 277963                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/connector/main/wildfly-connector-16.0.0.Final.jar
+7f96c8079000-7f96c807d000 r--s 00024000 08:01 155621                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/batch/jberet/main/wildfly-batch-jberet-16.0.0.Final.jar
+7f96c807d000-7f96c807f000 r--s 00005000 08:01 155622                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/microprofile/health-smallrye/main/wildfly-microprofile-health-smallrye-16.0.0.Final.jar
+7f96c807f000-7f96c8080000 r--s 00001000 08:01 394025                     /home/user/wildfly/modules/system/layers/base/io/prometheus/simpleclient/main/simpleclient_common-0.6.0.jar
+7f96c8080000-7f96c8082000 r--s 0000d000 08:01 394023                     /home/user/wildfly/modules/system/layers/base/io/prometheus/simpleclient/main/simpleclient-0.6.0.jar
+7f96c8082000-7f96c8084000 r--s 0000b000 08:01 277914                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/jsf/main/wildfly-jsf-16.0.0.Final.jar
+7f96c8084000-7f96c8086000 r--s 00003000 08:01 155626                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/microprofile/opentracing-smallrye/main/wildfly-microprofile-opentracing-extension-16.0.0.Final.jar
+7f96c8086000-7f96c8087000 r--s 00005000 08:01 155611                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/discovery/main/wildfly-discovery-8.0.0.Final.jar
+7f96c8087000-7f96c8089000 r--s 00006000 08:01 155635                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/bean-validation/main/wildfly-bean-validation-16.0.0.Final.jar
+7f96c8089000-7f96c808b000 r--s 00008000 08:01 155607                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/request-controller/main/wildfly-request-controller-8.0.0.Final.jar
+7f96c808b000-7f96c8090000 r--s 00037000 08:01 277944                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/transactions/main/wildfly-transactions-16.0.0.Final.jar
+7f96c8090000-7f96c8096000 r--s 0003b000 08:01 276400                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/jpa/main/wildfly-jpa-16.0.0.Final.jar
+7f96c8096000-7f96c8097000 r--s 00003000 08:01 155630                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/ee-security/main/wildfly-ee-security-16.0.0.Final.jar
+7f96c8097000-7f96c80a5000 r--s 0009f000 08:01 275836                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/clustering/infinispan/main/wildfly-clustering-infinispan-extension-16.0.0.Final.jar
+7f96c80a5000-7f96c80c0000 r--s 0015d000 08:01 277989                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/ejb3/main/wildfly-ejb3-16.0.0.Final.jar
+7f96c80c0000-7f96c80c8000 r--s 0006a000 08:01 277987                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/logging/main/wildfly-logging-8.0.0.Final.jar
+7f96c80c8000-7f96c80cb000 ---p 00000000 00:00 0 
+7f96c80cb000-7f96c81c9000 rw-p 00000000 00:00 0 
+7f96c81c9000-7f96c81d1000 r--s 00047000 08:01 155813                     /home/user/wildfly/modules/system/layers/base/org/jboss/remoting-jmx/main/remoting-jmx-3.0.1.Final.jar
+7f96c81d1000-7f96c81db000 r--s 00085000 08:01 155818                     /home/user/wildfly/modules/system/layers/base/org/jboss/xnio/main/xnio-api-3.6.5.Final.jar
+7f96c81db000-7f96c81e1000 r--s 00031000 08:01 155765                     /home/user/wildfly/modules/system/layers/base/org/jboss/marshalling/main/jboss-marshalling-2.0.6.Final.jar
+7f96c81e1000-7f96c81e6000 r--s 00049000 08:01 155719                     /home/user/wildfly/modules/system/layers/base/org/jboss/remoting/main/jboss-remoting-5.0.8.Final.jar
+7f96c81e6000-7f96c81ea000 r--s 00031000 08:01 155837                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/remoting/main/wildfly-remoting-8.0.0.Final.jar
+7f96c81ea000-7f96c81fb000 r--s 000d5000 08:01 155861                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/domain-management/main/wildfly-domain-management-8.0.0.Final.jar
+7f96c81fb000-7f96c81fe000 r--s 00010000 08:01 277982                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/jdr/main/wildfly-jdr-16.0.0.Final.jar
+7f96c81fe000-7f96c8200000 r--s 00008000 08:01 155629                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/microprofile/config-smallrye/main/wildfly-microprofile-config-smallrye-16.0.0.Final.jar
+7f96c8200000-7f96c8202000 r--s 00008000 08:01 155599                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/core-management/main/wildfly-core-management-subsystem-8.0.0.Final.jar
+7f96c8202000-7f96c8204000 r--s 0000b000 08:01 155624                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/microprofile/metrics-smallrye/main/wildfly-microprofile-metrics-smallrye-16.0.0.Final.jar
+7f96c8204000-7f96c8208000 r--s 0001d000 08:01 155869                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/deployment-scanner/main/wildfly-deployment-scanner-8.0.0.Final.jar
+7f96c8208000-7f96c820d000 r--s 00035000 08:01 155855                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/weld/main/wildfly-weld-16.0.0.Final.jar
+7f96c820d000-7f96c820f000 r--s 00017000 08:01 277976                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/jaxrs/main/wildfly-jaxrs-16.0.0.Final.jar
+7f96c820f000-7f96c8212000 r--s 00013000 08:01 277966                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/sar/main/wildfly-sar-16.0.0.Final.jar
+7f96c8212000-7f96c8215000 r--s 0001c000 08:01 277986                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/pojo/main/wildfly-pojo-16.0.0.Final.jar
+7f96c8215000-7f96c8219000 r--s 0002a000 08:01 155592                     /home/user/wildfly/modules/system/layers/base/org/wildfly/transaction/client/main/wildfly-transaction-client-1.1.3.Final.jar
+7f96c8219000-7f96c821f000 r--s 00060000 08:01 155747                     /home/user/wildfly/modules/system/layers/base/org/jboss/ejb-client/main/jboss-ejb-client-4.0.14.Final.jar
+7f96c821f000-7f96c8221000 r--s 00007000 08:01 155644                     /home/user/wildfly/modules/system/layers/base/org/wildfly/security/elytron-web/undertow-server/main/undertow-server-1.4.0.Final.jar
+7f96c8221000-7f96c8224000 r--s 00021000 08:01 155704                     /home/user/wildfly/modules/system/layers/base/org/wildfly/openssl/main/wildfly-openssl-java-1.0.6.Final.jar
+7f96c8224000-7f96c8226000 r--s 0001c000 08:01 155816                     /home/user/wildfly/modules/system/layers/base/org/jboss/xnio/nio/main/xnio-nio-3.6.5.Final.jar
+7f96c8226000-7f96c8228000 r--s 00013000 08:01 155608                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/io/main/wildfly-io-8.0.0.Final.jar
+7f96c8228000-7f96c822d000 r--s 00045000 08:01 542204                     /home/user/wildfly/modules/system/layers/base/javax/servlet/api/main/jboss-servlet-api_4.0_spec-1.0.0.Final.jar
+7f96c822d000-7f96c822f000 r--s 00007000 08:01 661702                     /home/user/wildfly/modules/system/layers/base/javax/security/auth/message/api/main/jboss-jaspi-api_1.1_spec-1.0.2.Final.jar
+7f96c822f000-7f96c8230000 r--s 00008000 08:01 661703                     /home/user/wildfly/modules/system/layers/base/javax/security/jacc/api/main/jboss-jacc-api_1.5_spec-1.0.2.Final.jar
+7f96c8230000-7f96c8231000 r--s 00002000 08:01 155568                     /home/user/wildfly/modules/system/layers/base/org/projectodd/vdx/main/vdx-wildfly-1.1.6.jar
+7f96c8231000-7f96c8234000 r--s 00013000 08:01 155567                     /home/user/wildfly/modules/system/layers/base/org/projectodd/vdx/main/vdx-core-1.1.6.jar
+7f96c8234000-7f96c8236000 r--s 00002000 08:01 155616                     /home/user/wildfly/modules/system/layers/base/org/wildfly/extension/core-management-client/main/wildfly-core-management-client-8.0.0.Final.jar
+7f96c8236000-7f96c825f000 r--s 00200000 08:01 394017                     /home/user/wildfly/modules/system/layers/base/io/undertow/core/main/undertow-core-2.0.19.Final.jar
+7f96c825f000-7f96c8261000 r--s 00004000 08:01 1058857                    /home/user/wildfly/modules/system/layers/base/org/picketbox/main/picketbox-commons-1.0.0.final.jar
+7f96c8261000-7f96c8262000 r--s 00005000 08:01 1058859                    /home/user/wildfly/modules/system/layers/base/org/picketbox/main/picketbox-infinispan-5.0.3.Final.jar
+7f96c8262000-7f96c8274000 r--s 000d6000 08:01 1058860                    /home/user/wildfly/modules/system/layers/base/org/picketbox/main/picketbox-5.0.3.Final.jar
+7f96c8274000-7f96c827b000 r--s 0004c000 08:01 155873                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/security/main/wildfly-security-16.0.0.Final.jar
+7f96c827b000-7f96c827e000 r--s 00015000 08:01 276403                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/protocol/main/wildfly-protocol-8.0.0.Final.jar
+7f96c827e000-7f96c827f000 r--s 00002000 08:01 277952                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/version/main/wildfly-version-8.0.0.Final.jar
+7f96c827f000-7f96c8282000 r--s 0001d000 08:01 277973                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/process-controller/main/wildfly-process-controller-8.0.0.Final.jar
+7f96c8282000-7f96c8285000 r--s 0001a000 08:01 277974                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/platform-mbean/main/wildfly-platform-mbean-8.0.0.Final.jar
+7f96c8285000-7f96c828f000 r--s 0006e000 08:01 277994                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/patching/main/wildfly-patching-8.0.0.Final.jar
+7f96c828f000-7f96c8291000 r--s 00009000 08:01 275828                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/network/main/wildfly-network-8.0.0.Final.jar
+7f96c8291000-7f96c8294000 r--s 00019000 08:01 277957                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/domain-http-interface/main/wildfly-domain-http-interface-8.0.0.Final.jar
+7f96c8294000-7f96c8297000 r--s 0000c000 08:01 277949                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/deployment-repository/main/wildfly-deployment-repository-8.0.0.Final.jar
+7f96c8297000-7f96c829b000 r--s 00025000 08:01 155810                     /home/user/wildfly/modules/system/layers/base/org/jboss/threads/main/jboss-threads-2.3.3.Final.jar
+7f96c829b000-7f96c829d000 r--s 00003000 08:01 155809                     /home/user/wildfly/modules/system/layers/base/org/jboss/stdio/main/jboss-stdio-1.0.2.GA.jar
+7f96c829d000-7f96c829f000 r--s 00013000 08:01 155763                     /home/user/wildfly/modules/system/layers/base/org/jboss/marshalling/river/main/jboss-marshalling-river-2.0.6.Final.jar
+7f96c829f000-7f96c82a2000 r--s 0002b000 08:01 541255                     /home/user/wildfly/modules/system/layers/base/org/jboss/jandex/main/jandex-2.0.5.Final.jar
+7f96c82a2000-7f96c82a5000 r--s 00010000 08:01 155716                     /home/user/wildfly/modules/system/layers/base/org/jboss/invocation/main/jboss-invocation-1.5.2.Final.jar
+7f96c82a5000-7f96c82a8000 r--s 0001b000 08:01 155766                     /home/user/wildfly/modules/system/layers/base/org/jboss/classfilewriter/main/jboss-classfilewriter-1.2.4.Final.jar
+7f96c82a8000-7f96c82aa000 r--s 00000000 08:01 277909                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/core-security-api/main/wildfly-core-security-api-8.0.0.Final.jar
+7f96c82aa000-7f96c82ac000 r--s 00002000 08:01 275824                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/core-security/main/wildfly-core-security-8.0.0.Final.jar
+7f96c82ac000-7f96c82ae000 r--s 00016000 08:01 1069057                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar
+7f96c82ae000-7f96c82b2000 r--s 000a1000 08:01 1069059                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar
+7f96c82b2000-7f96c82d7000 r--s 00264000 08:01 155572                     /home/user/wildfly/modules/system/layers/base/org/eclipse/jgit/main/org.eclipse.jgit-5.0.2.201807311906-r.jar
+7f96c82d7000-7f96c82d9000 r--s 00021000 08:01 155895                     /home/user/wildfly/modules/system/layers/base/org/jboss/dmr/main/jboss-dmr-1.5.0.Final.jar
+7f96c82d9000-7f96c82e0000 r--s 0002f000 08:01 277967                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/controller-client/main/wildfly-controller-client-8.0.0.Final.jar
+7f96c82e0000-7f96c8305000 r--s 001cf000 08:01 277916                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/controller/main/wildfly-controller-8.0.0.Final.jar
+7f96c8305000-7f96c8307000 r--s 00008000 08:01 155744                     /home/user/wildfly/modules/system/layers/base/org/jboss/staxmapper/main/staxmapper-1.3.0.Final.jar
+7f96c8307000-7f96c8310000 r-xp 00000000 08:01 1069012                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f96c8310000-7f96c850f000 ---p 00009000 08:01 1069012                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f96c850f000-7f96c8510000 r--p 00008000 08:01 1069012                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f96c8510000-7f96c8511000 rw-p 00009000 08:01 1069012                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f96c8511000-7f96c8513000 r--s 0000f000 08:01 539960                     /home/user/wildfly/modules/system/layers/base/org/jboss/logging/main/jboss-logging-3.3.2.Final.jar
+7f96c8513000-7f96c8713000 rw-p 00000000 00:00 0 
+7f96c8713000-7f96c8719000 r--s 00033000 08:01 155689                     /home/user/wildfly/modules/system/layers/base/org/wildfly/common/main/wildfly-common-1.4.0.Final.jar
+7f96c8719000-7f96c871b000 r--s 00017000 08:01 1058546                    /home/user/wildfly/modules/system/layers/base/org/glassfish/javax/json/main/javax.json-1.1.2.jar
+7f96c871b000-7f96c871d000 r--s 00006000 08:01 1059228                    /home/user/wildfly/modules/system/layers/base/javax/json/api/main/javax.json-api-1.1.2.jar
+7f96c871d000-7f96c871f000 r--s 0000a000 08:01 155712                     /home/user/wildfly/modules/system/layers/base/org/wildfly/client/config/main/wildfly-client-config-1.0.1.Final.jar
+7f96c871f000-7f96c8741000 r--s 001f5000 08:01 155639                     /home/user/wildfly/modules/system/layers/base/org/wildfly/security/elytron-private/main/wildfly-elytron-1.8.0.Final.jar
+7f96c8741000-7f96c8745000 r--s 00020000 08:01 155742                     /home/user/wildfly/modules/system/layers/base/org/jboss/vfs/main/jboss-vfs-3.2.14.Final.jar
+7f96c8745000-7f96c874b000 r--s 00034000 08:01 155821                     /home/user/wildfly/modules/system/layers/base/org/jboss/msc/main/jboss-msc-1.4.5.Final.jar
+7f96c874b000-7f96c875e000 r--s 00184000 08:01 276402                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/server/main/wildfly-server-8.0.0.Final.jar
+7f96c875e000-7f96c8763000 r--s 00034000 08:01 155881                     /home/user/wildfly/modules/system/layers/base/org/jboss/as/jmx/main/wildfly-jmx-8.0.0.Final.jar
+7f96c8763000-7f96c877d000 r--s 001a7000 08:01 1189307                    /home/user/wildfly/modules/system/layers/base/org/apache/xerces/main/xercesImpl-2.12.0.SP02.jar
+7f96c877d000-7f96c87a2000 r--s 002fa000 08:01 1189314                    /home/user/wildfly/modules/system/layers/base/org/apache/xalan/main/xalan-2.7.1.jbossorg-4.jar
+7f96c87a2000-7f96c87d3000 rw-p 00000000 00:00 0 
+7f96c87d3000-7f96c87e9000 r-xp 00000000 08:01 1069014                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f96c87e9000-7f96c89e8000 ---p 00016000 08:01 1069014                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f96c89e8000-7f96c89e9000 r--p 00015000 08:01 1069014                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f96c89e9000-7f96c89ea000 rw-p 00016000 08:01 1069014                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f96c89ea000-7f96c89fb000 r-xp 00000000 08:01 1069015                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f96c89fb000-7f96c8bfa000 ---p 00011000 08:01 1069015                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f96c8bfa000-7f96c8bfb000 r--p 00010000 08:01 1069015                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f96c8bfb000-7f96c8bfc000 rw-p 00011000 08:01 1069015                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f96c8bfc000-7f96c8bff000 ---p 00000000 00:00 0 
+7f96c8bff000-7f96c8cfd000 rw-p 00000000 00:00 0 
+7f96c8cfd000-7f96c8cfe000 ---p 00000000 00:00 0 
+7f96c8cfe000-7f96c8dfe000 rw-p 00000000 00:00 0 
+7f96c8dfe000-7f96c8e01000 ---p 00000000 00:00 0 
+7f96c8e01000-7f96c8eff000 rw-p 00000000 00:00 0 
+7f96c8eff000-7f96c8f00000 ---p 00000000 00:00 0 
+7f96c8f00000-7f96c8f03000 ---p 00000000 00:00 0 
+7f96c8f03000-7f96c9000000 rw-p 00000000 00:00 0 
+7f96c9000000-7f96c9c30000 rwxp 00000000 00:00 0 
+7f96c9c30000-7f96d8000000 ---p 00000000 00:00 0 
+7f96d8000000-7f96d8b89000 rw-p 00000000 00:00 0 
+7f96d8b89000-7f96dc000000 ---p 00000000 00:00 0 
+7f96dc000000-7f96dc003000 r--s 0000d000 08:01 155806                     /home/user/wildfly/modules/system/layers/base/org/jboss/common-beans/main/jboss-common-beans-2.0.0.Final.jar
+7f96dc003000-7f96dc00b000 r--s 0005f000 08:01 155804                     /home/user/wildfly/modules/system/layers/base/org/jboss/logmanager/main/jboss-logmanager-2.1.7.Final.jar
+7f96dc00b000-7f96dc00f000 r--s 00024000 08:01 1059012                    /home/user/wildfly/modules/system/layers/base/org/codehaus/woodstox/main/stax2-api-3.1.4.jar
+7f96dc00f000-7f96dc015000 r--s 00078000 08:01 1059011                    /home/user/wildfly/modules/system/layers/base/org/codehaus/woodstox/main/woodstox-core-5.0.3.jar
+7f96dc015000-7f96dc019000 r--s 00043000 08:01 1189312                    /home/user/wildfly/modules/system/layers/base/org/apache/xalan/main/serializer-2.7.1.jbossorg-4.jar
+7f96dc019000-7f96dc022000 r--s 0006f000 08:01 1058254                    /home/user/wildfly/jboss-modules.jar
+7f96dc022000-7f96dc03d000 r--s 00394000 08:01 1069036                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar
+7f96dc03d000-7f96dc058000 r--s 001d6000 08:01 1069041                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar
+7f96dc058000-7f96dc059000 ---p 00000000 00:00 0 
+7f96dc059000-7f96dc05c000 ---p 00000000 00:00 0 
+7f96dc05c000-7f96dc159000 rw-p 00000000 00:00 0 
+7f96dc159000-7f96dc15c000 ---p 00000000 00:00 0 
+7f96dc15c000-7f96dc25a000 rw-p 00000000 00:00 0 
+7f96dc25a000-7f96dcc29000 r--p 00000000 08:01 1055652                    /usr/lib/locale/locale-archive
+7f96dcc29000-7f96dcc2c000 ---p 00000000 00:00 0 
+7f96dcc2c000-7f96dcd2a000 rw-p 00000000 00:00 0 
+7f96dcd2a000-7f96dcd2d000 ---p 00000000 00:00 0 
+7f96dcd2d000-7f96dce2b000 rw-p 00000000 00:00 0 
+7f96dce2b000-7f96dce2c000 ---p 00000000 00:00 0 
+7f96dce2c000-7f96dcf7a000 rw-p 00000000 00:00 0 
+7f96dcf7a000-7f96dd149000 r--s 03c3b000 08:01 1069065                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+7f96dd149000-7f96dda1a000 rw-p 00000000 00:00 0 
+7f96dda1a000-7f96dda2c000 rw-p 00000000 00:00 0 
+7f96dda2c000-7f96dda6f000 ---p 00000000 00:00 0 
+7f96dda6f000-7f96dda91000 rw-p 00000000 00:00 0 
+7f96dda91000-7f96ddb1a000 ---p 00000000 00:00 0 
+7f96ddb1a000-7f96ddb4c000 rw-p 00000000 00:00 0 
+7f96ddb4c000-7f96ddedb000 ---p 00000000 00:00 0 
+7f96ddedb000-7f96ddee3000 r-xp 00000000 08:01 1069022                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f96ddee3000-7f96de0e2000 ---p 00008000 08:01 1069022                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f96de0e2000-7f96de0e3000 r--p 00007000 08:01 1069022                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f96de0e3000-7f96de0e4000 rw-p 00008000 08:01 1069022                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f96de0e4000-7f96de0ef000 r-xp 00000000 08:01 661596                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f96de0ef000-7f96de2ee000 ---p 0000b000 08:01 661596                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f96de2ee000-7f96de2ef000 r--p 0000a000 08:01 661596                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f96de2ef000-7f96de2f0000 rw-p 0000b000 08:01 661596                     /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f96de2f0000-7f96de2f6000 rw-p 00000000 00:00 0 
+7f96de2f6000-7f96de30d000 r-xp 00000000 08:01 661590                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f96de30d000-7f96de50c000 ---p 00017000 08:01 661590                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f96de50c000-7f96de50d000 r--p 00016000 08:01 661590                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f96de50d000-7f96de50e000 rw-p 00017000 08:01 661590                     /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f96de50e000-7f96de510000 rw-p 00000000 00:00 0 
+7f96de510000-7f96de51b000 r-xp 00000000 08:01 661607                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f96de51b000-7f96de71a000 ---p 0000b000 08:01 661607                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f96de71a000-7f96de71b000 r--p 0000a000 08:01 661607                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f96de71b000-7f96de71c000 rw-p 0000b000 08:01 661607                     /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f96de71c000-7f96de724000 r-xp 00000000 08:01 661592                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f96de724000-7f96de924000 ---p 00008000 08:01 661592                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f96de924000-7f96de925000 r--p 00008000 08:01 661592                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f96de925000-7f96de926000 rw-p 00009000 08:01 661592                     /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f96de926000-7f96de952000 r-xp 00000000 08:01 1069003                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f96de952000-7f96deb51000 ---p 0002c000 08:01 1069003                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f96deb51000-7f96deb52000 r--p 0002b000 08:01 1069003                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f96deb52000-7f96deb54000 rw-p 0002c000 08:01 1069003                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f96deb54000-7f96deb64000 r-xp 00000000 08:01 1069021                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f96deb64000-7f96ded63000 ---p 00010000 08:01 1069021                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f96ded63000-7f96ded65000 r--p 0000f000 08:01 1069021                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f96ded65000-7f96ded66000 rw-p 00011000 08:01 1069021                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f96ded66000-7f96ded6d000 r-xp 00000000 08:01 661647                     /lib/x86_64-linux-gnu/librt-2.27.so
+7f96ded6d000-7f96def6c000 ---p 00007000 08:01 661647                     /lib/x86_64-linux-gnu/librt-2.27.so
+7f96def6c000-7f96def6d000 r--p 00006000 08:01 661647                     /lib/x86_64-linux-gnu/librt-2.27.so
+7f96def6d000-7f96def6e000 rw-p 00007000 08:01 661647                     /lib/x86_64-linux-gnu/librt-2.27.so
+7f96def6e000-7f96def85000 r-xp 00000000 08:01 673435                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f96def85000-7f96df184000 ---p 00017000 08:01 673435                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f96df184000-7f96df185000 r--p 00016000 08:01 673435                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f96df185000-7f96df186000 rw-p 00017000 08:01 673435                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f96df186000-7f96df323000 r-xp 00000000 08:01 661569                     /lib/x86_64-linux-gnu/libm-2.27.so
+7f96df323000-7f96df522000 ---p 0019d000 08:01 661569                     /lib/x86_64-linux-gnu/libm-2.27.so
+7f96df522000-7f96df523000 r--p 0019c000 08:01 661569                     /lib/x86_64-linux-gnu/libm-2.27.so
+7f96df523000-7f96df524000 rw-p 0019d000 08:01 661569                     /lib/x86_64-linux-gnu/libm-2.27.so
+7f96df524000-7f96df69d000 r-xp 00000000 08:01 1051805                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7f96df69d000-7f96df89d000 ---p 00179000 08:01 1051805                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7f96df89d000-7f96df8a7000 r--p 00179000 08:01 1051805                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7f96df8a7000-7f96df8a9000 rw-p 00183000 08:01 1051805                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7f96df8a9000-7f96df8ad000 rw-p 00000000 00:00 0 
+7f96df8ad000-7f96e054a000 r-xp 00000000 08:01 1069025                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f96e054a000-7f96e0749000 ---p 00c9d000 08:01 1069025                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f96e0749000-7f96e07dd000 r--p 00c9c000 08:01 1069025                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f96e07dd000-7f96e0806000 rw-p 00d30000 08:01 1069025                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f96e0806000-7f96e0836000 rw-p 00000000 00:00 0 
+7f96e0836000-7f96e0850000 r-xp 00000000 08:01 661639                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f96e0850000-7f96e0a4f000 ---p 0001a000 08:01 661639                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f96e0a4f000-7f96e0a50000 r--p 00019000 08:01 661639                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f96e0a50000-7f96e0a51000 rw-p 0001a000 08:01 661639                     /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f96e0a51000-7f96e0a55000 rw-p 00000000 00:00 0 
+7f96e0a55000-7f96e0a58000 r-xp 00000000 08:01 661529                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7f96e0a58000-7f96e0c57000 ---p 00003000 08:01 661529                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7f96e0c57000-7f96e0c58000 r--p 00002000 08:01 661529                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7f96e0c58000-7f96e0c59000 rw-p 00003000 08:01 661529                     /lib/x86_64-linux-gnu/libdl-2.27.so
+7f96e0c59000-7f96e0c75000 r-xp 00000000 08:01 661678                     /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f96e0c75000-7f96e0e74000 ---p 0001c000 08:01 661678                     /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f96e0e74000-7f96e0e75000 r--p 0001b000 08:01 661678                     /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f96e0e75000-7f96e0e76000 rw-p 0001c000 08:01 661678                     /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f96e0e76000-7f96e105d000 r-xp 00000000 08:01 661506                     /lib/x86_64-linux-gnu/libc-2.27.so
+7f96e105d000-7f96e125d000 ---p 001e7000 08:01 661506                     /lib/x86_64-linux-gnu/libc-2.27.so
+7f96e125d000-7f96e1261000 r--p 001e7000 08:01 661506                     /lib/x86_64-linux-gnu/libc-2.27.so
+7f96e1261000-7f96e1263000 rw-p 001eb000 08:01 661506                     /lib/x86_64-linux-gnu/libc-2.27.so
+7f96e1263000-7f96e1267000 rw-p 00000000 00:00 0 
+7f96e1267000-7f96e1275000 r-xp 00000000 08:01 1068989                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f96e1275000-7f96e1474000 ---p 0000e000 08:01 1068989                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f96e1474000-7f96e1475000 r--p 0000d000 08:01 1068989                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f96e1475000-7f96e1476000 rw-p 0000e000 08:01 1068989                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f96e1476000-7f96e149d000 r-xp 00000000 08:01 661478                     /lib/x86_64-linux-gnu/ld-2.27.so
+7f96e149d000-7f96e149e000 r--p 00000000 08:01 272232                     /usr/share/locale-langpack/en_GB/LC_MESSAGES/libc.mo
+7f96e149e000-7f96e14a0000 r--s 00007000 08:01 276598                     /usr/share/java/java-atk-wrapper.jar
+7f96e14a0000-7f96e14a3000 r--s 0000f000 08:01 1069038                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+7f96e14a3000-7f96e14ad000 r--s 00116000 08:01 1069040                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar
+7f96e14ad000-7f96e14b2000 r--s 0003c000 08:01 1069043                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+7f96e14b2000-7f96e14fc000 rw-p 00000000 00:00 0 
+7f96e14fc000-7f96e1585000 ---p 00000000 00:00 0 
+7f96e1585000-7f96e1586000 ---p 00000000 00:00 0 
+7f96e1586000-7f96e1589000 ---p 00000000 00:00 0 
+7f96e1589000-7f96e1688000 rw-p 00000000 00:00 0 
+7f96e1688000-7f96e1689000 r--s 0000a000 08:01 1069039                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar
+7f96e1689000-7f96e168b000 r--s 00001000 08:01 1069037                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar
+7f96e168b000-7f96e168c000 r--s 00010000 08:01 1069045                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar
+7f96e168c000-7f96e168e000 r--s 00008000 08:01 1069042                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar
+7f96e168e000-7f96e1691000 r--s 00039000 08:01 1069044                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+7f96e1691000-7f96e1699000 rw-s 00000000 08:01 415323                     /tmp/hsperfdata_user/10347
+7f96e1699000-7f96e169a000 rw-p 00000000 00:00 0 
+7f96e169a000-7f96e169b000 ---p 00000000 00:00 0 
+7f96e169b000-7f96e169d000 rw-p 00000000 00:00 0 
+7f96e169d000-7f96e169e000 r--p 00027000 08:01 661478                     /lib/x86_64-linux-gnu/ld-2.27.so
+7f96e169e000-7f96e169f000 rw-p 00028000 08:01 661478                     /lib/x86_64-linux-gnu/ld-2.27.so
+7f96e169f000-7f96e16a0000 rw-p 00000000 00:00 0 
+7fff08630000-7fff08651000 rw-p 00000000 00:00 0                          [stack]
+7fff08666000-7fff08669000 r--p 00000000 00:00 0                          [vvar]
+7fff08669000-7fff0866b000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dprogram.name=JBossTools: WildFly 16 at localhost with JMS -Xms64m -Xmx512m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/user/wildfly/standalone/log/boot.log -Dlogging.configuration=file:/home/user/wildfly/standalone/configuration/logging.properties -Djboss.home.dir=/home/user/wildfly -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+java_command: org.jboss.modules.Main -mp /home/user/wildfly/modules org.jboss.as.standalone -b localhost --server-config=standalone-full.xml -Djboss.server.base.dir=/home/user/wildfly/standalone
+java_class_path (initial): /home/user/wildfly/jboss-modules.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=native:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+USERNAME=user
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xab5000], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xab5000], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8ea970], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8ea970], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8ea970], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8ea970], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8ea820], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8eae90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8eae90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8eae90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8eae90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.2 LTS"
+
+uname:Linux 4.18.0-20-generic #21~18.04.1-Ubuntu SMP Wed May 8 08:43:37 UTC 2019 x86_64
+libc:glibc 2.27 NPTL 2.27 
+rlimit: STACK 8192k, CORE 0k, NPROC 15603, NOFILE 4096, AS infinity
+load average:14.57 6.46 2.64
+
+/proc/meminfo:
+MemTotal:        4039500 kB
+MemFree:           86820 kB
+MemAvailable:          0 kB
+Buffers:             268 kB
+Cached:          1124456 kB
+SwapCached:         7200 kB
+Active:          3097168 kB
+Inactive:         642768 kB
+Active(anon):    3093952 kB
+Inactive(anon):   636732 kB
+Active(file):       3216 kB
+Inactive(file):     6036 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:        932540 kB
+SwapFree:              0 kB
+Dirty:                36 kB
+Writeback:            28 kB
+AnonPages:       2608100 kB
+Mapped:          1090336 kB
+Shmem:           1115508 kB
+Slab:              99172 kB
+SReclaimable:      33624 kB
+SUnreclaim:        65548 kB
+KernelStack:       12464 kB
+PageTables:        52808 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2952288 kB
+Committed_AS:    9033096 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      184256 kB
+DirectMap2M:     4009984 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0
+cpu_memory_nodes: 0
+active_processor_count: 1
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 3880767488
+memory_max_usage_in_bytes: 3882352640
+
+
+CPU:total 1 (initial active 1) (1 cores per cpu, 1 threads per core) family 6 model 70 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, lzcnt, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 70
+model name	: Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz
+stepping	: 1
+cpu MHz		: 2494.226
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq monitor ssse3 cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm invpcid_single pti fsgsbase avx2 invpcid flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds
+bogomips	: 4988.45
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 4039500k(86028k free), swap 932540k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.212-b03) for linux-amd64 JRE (1.8.0_212-8u212-b03-0ubuntu1.18.04.1-b03), built on Apr 26 2019 01:04:36 by "buildd" with gcc 7.3.0
+
+time: Thu Jun  6 14:14:12 2019
+timezone: BST
+elapsed time: 171 seconds (0d 0h 2m 51s)
+
