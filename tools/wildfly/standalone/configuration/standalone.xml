@@ -114,9 +114,6 @@
             <logger category="com.arjuna">
                 <level name="INFO"/>
             </logger>
-            <logger category="com.arjuna.ats.jta">
-                <level name="TRACE"/>
-            </logger>
             <logger category="org.jboss.as.jpa">
                 <level name="INFO"/>
             </logger>
@@ -543,7 +540,7 @@
     </socket-binding-group>
     <deployments>
         <deployment name="NetworkConfigurationService-ear.ear" runtime-name="NetworkConfigurationService-ear.ear">
-            <content sha1="1667eae1e115adef8ddaa57bece00a5b91b39329"/>
+            <content sha1="10162c3330473efb9f226fc51c42334ea3563b29"/>
         </deployment>
     </deployments>
 </server>
