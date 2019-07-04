@@ -5,36 +5,33 @@ import com.igor.ns.entity.Cell;
 import com.igor.ns.exception.NetworkConfigurationServiceException;
 
 import javax.ejb.Singleton;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.inject.Inject;
 import java.util.List;
 
 @Singleton
 public class CellController implements CellDAO {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    @Inject
+    private Persistence<Cell> cellPersistence;
 
 
     @Override
     public Cell getCellById(final long cellId) {
-        return entityManager.find(Cell.class, cellId);
+        return cellPersistence.find(cellId);
     }
 
     @Override
     public List<Cell> getCells() {
-        final Query query = entityManager.createQuery("SELECT q FROM Query q");
-        return query.getResultList();
+        return cellPersistence.findAll();
     }
 
     @Override
     public void persistCell(final Cell cell) throws NetworkConfigurationServiceException {
-        entityManager.persist(cell);
+        cellPersistence.persist(cell);
     }
 
     @Override
     public void delete(final long cellId) {
-        entityManager.remove(getCellById(cellId));
+        cellPersistence.remove(cellId);
     }
 }

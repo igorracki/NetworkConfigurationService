@@ -5,6 +5,7 @@ import com.igor.ns.ejb.NodeDAO;
 import com.igor.ns.entity.Cell;
 import com.igor.ns.entity.Node;
 import com.igor.ns.exception.NetworkConfigurationServiceException;
+import com.igor.ns.interceptor.PersistenceValidator;
 
 import javax.ejb.Singleton;
 import javax.inject.Inject;
@@ -16,33 +17,31 @@ import java.util.List;
 @Singleton
 public class NodeController implements NodeDAO {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    @Inject
+    private Persistence<Node> nodePersistence;
 
     @Inject
     private CellDAO cellDAO;
 
     @Override
     public Node getNodeById(final long nodeId) {
-        return entityManager.find(Node.class, nodeId);
+        return nodePersistence.find(nodeId);
     }
 
     @Override
     public List<Node> getNodes() {
-        final Query query = entityManager.createQuery("SELECT n FROM Node n");
-        final List<Node> nodes = query.getResultList();
-//        nodes.forEach(node -> LOGGER.info("Node getCells size {}", node.getCells().size()));
-        return nodes;
+        return nodePersistence.findAll();
     }
 
     @Override
+    @PersistenceValidator
     public void persistNode(final Node node) throws NetworkConfigurationServiceException {
-        entityManager.persist(node);
+        nodePersistence.persist(node);
     }
 
     @Override
     public void delete(final long nodeId) {
-        entityManager.remove(getNodeById(nodeId));
+        nodePersistence.remove(nodeId);
     }
 
     @Override
@@ -53,25 +52,6 @@ public class NodeController implements NodeDAO {
             cell.setParent(node);
             node.addCell(cell);
         }
-        entityManager.merge(node);
-//        LOGGER.info("Node ID is: {}", nodeId);
-//        final Node node = getNodeById(nodeId);
-//        LOGGER.info("Node is: {}", node);
-//        final Set<Cell> cells = node.getCells();
-//        node.setCells(null);
-//        entityManager.detach(node);
-//
-//        for (final long id : cellIds) {
-//            final Cell cell = cellDAO.getCellById(id);
-//            entityManager.detach(cell);
-////            cell.setParent(node);
-////            node.addCell(new Cell(cell.getCellId() + 1234, cell.getRange(), cell.getName()));
-////            node.addCell(new Cell(111, 2020, "qweqweqwe"));
-//            node.addCell(cell);
-//            entityManager.merge(cell);
-//            LOGGER.info("Added cell to node!");
-//        }
-//        cells.forEach(node::addCell);
-//        entityManager.merge(node);
+        nodePersistence.merge(node);
     }
 }

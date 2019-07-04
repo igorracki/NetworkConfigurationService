@@ -28,9 +28,11 @@ public class PersistenceInterceptor {
 
         if (object instanceof Node) {
             final Node node = (Node) object;
+
             if (node.getCells() != null && !node.getCells().isEmpty()) {
                 throw new NetworkConfigurationServiceException("Please create the cells first (if required) and assign their IDs to the node, after the node is created!");
             }
+
             id = node.getNodeId();
             isNodeUnique = runQuery("SELECT n FROM Node n WHERE n.nodeId = :id", id);
         } else if (object instanceof Cell) {

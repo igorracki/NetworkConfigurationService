@@ -6,3 +6,13 @@ target/
 *.iws
 *.ipr
 .idea/
+
+tools/NetworkConfigurationService
+
+NetworkConfigurationService-ear/target/
+NetworkConfigurationService-ejb-api/target/
+NetworkConfigurationService-ejb/target/
+NetworkConfigurationService-jpa/target/
+NetworkConfigurationService-web/target/
+
+.idea/*
