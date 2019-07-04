@@ -114,14 +114,17 @@
             <logger category="com.arjuna">
                 <level name="INFO"/>
             </logger>
-<!--            <logger category="com.arjuna.ats.jta">-->
-<!--                <level name="TRACE"/>-->
-<!--            </logger>-->
             <logger category="org.jboss.as.jpa">
                 <level name="INFO"/>
             </logger>
             <logger category="org.hibernate.engine">
                 <level name="INFO"/>
+            </logger>
+            <logger category="org.hibernate.SQL">
+                <level name="DEBUG"/>
+            </logger>
+            <logger category="org.hibernate.type.descriptor.sql">
+                <level name="TRACE"/>
             </logger>
             <logger category="org.hibernate.jdbc">
                 <level name="INFO"/>
@@ -543,7 +546,7 @@
     </socket-binding-group>
     <deployments>
         <deployment name="NetworkConfigurationService-ear.ear" runtime-name="NetworkConfigurationService-ear.ear">
-            <content sha1="4ff12c5373541c47ea777bb045e356ac5dc936d6"/>
+            <content sha1="abfc25a48621f8501e787e0b3b43c3df657f98c7"/>
         </deployment>
     </deployments>
 </server>

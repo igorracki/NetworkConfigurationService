@@ -120,6 +120,12 @@
             <logger category="org.hibernate.engine">
                 <level name="INFO"/>
             </logger>
+            <logger category="org.hibernate.SQL">
+                <level name="DEBUG"/>
+            </logger>
+            <logger category="org.hibernate.type.descriptor.sql">
+                <level name="TRACE"/>
+            </logger>
             <logger category="org.hibernate.jdbc">
                 <level name="INFO"/>
             </logger>
@@ -540,7 +546,7 @@
     </socket-binding-group>
     <deployments>
         <deployment name="NetworkConfigurationService-ear.ear" runtime-name="NetworkConfigurationService-ear.ear">
-            <content sha1="10162c3330473efb9f226fc51c42334ea3563b29"/>
+            <content sha1="48b5eafea093f2c7390e37c77795a4c9ecb8f4bb"/>
         </deployment>
     </deployments>
 </server>

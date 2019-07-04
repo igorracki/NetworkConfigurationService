@@ -1,6 +1,7 @@
 package com.igor.ns.ejb;
 
 import com.igor.ns.entity.Node;
+import com.igor.ns.exception.NetworkConfigurationServiceException;
 
 import javax.ejb.Local;
 import java.util.List;
@@ -8,11 +9,13 @@ import java.util.List;
 @Local
 public interface NodeDAO {
 
-    Node getNodeById(final long id);
+    Node getNodeById(final long nodeId);
 
     List<Node> getNodes();
 
-    boolean persistNode(final Node node);
+    void persistNode(final Node node) throws NetworkConfigurationServiceException;
 
-    void delete(final long id);
+    void delete(final long nodeId);
+
+    void addCellsToNode(final long nodeId, final long[] cellIds);
 }
