@@ -1,5 +1,0 @@
-com/igor/ns/rest/RestService.class
-com/igor/ns/rest/exception/ServiceExceptionMapper.class
-com/igor/ns/rest/endpoint/CellConfigurationService.class
-com/igor/ns/rest/endpoint/NodeConfigurationService.class
-com/igor/ns/rest/utility/CellsForNode.class

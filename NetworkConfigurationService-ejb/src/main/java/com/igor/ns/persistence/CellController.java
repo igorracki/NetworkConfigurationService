@@ -3,9 +3,6 @@ package com.igor.ns.persistence;
 import com.igor.ns.ejb.CellDAO;
 import com.igor.ns.entity.Cell;
 import com.igor.ns.exception.NetworkConfigurationServiceException;
-import com.igor.ns.interceptor.PersistenceValidator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
@@ -15,8 +12,6 @@ import java.util.List;
 
 @Singleton
 public class CellController implements CellDAO {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(CellController.class);
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -34,7 +29,6 @@ public class CellController implements CellDAO {
     }
 
     @Override
-    @PersistenceValidator
     public void persistCell(final Cell cell) throws NetworkConfigurationServiceException {
         entityManager.persist(cell);
     }

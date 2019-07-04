@@ -3,8 +3,6 @@ package com.igor.ns.interceptor;
 import com.igor.ns.entity.Cell;
 import com.igor.ns.entity.Node;
 import com.igor.ns.exception.NetworkConfigurationServiceException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
@@ -19,14 +17,11 @@ import static java.lang.String.format;
 @Interceptor
 public class PersistenceInterceptor {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(PersistenceInterceptor.class);
-
     @PersistenceContext
     private EntityManager entityManager;
 
     @AroundInvoke
     public Object validateUniqueId(final InvocationContext ctx) throws Exception {
-        LOGGER.info("Intercepted a call to {}.", ctx.getMethod().getName());
         final Object object = ctx.getParameters()[0];
         boolean isNodeUnique = true;
         long id = 0;

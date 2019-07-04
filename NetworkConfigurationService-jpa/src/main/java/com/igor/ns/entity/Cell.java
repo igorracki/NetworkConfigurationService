@@ -3,10 +3,12 @@ package com.igor.ns.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Cells", schema = "Network")
+@XmlRootElement
 public class Cell {
 
     @Id
@@ -17,7 +19,7 @@ public class Cell {
 
     @JsonBackReference
     @ManyToOne
-//    @JoinColumn(name = "parentId")
+    @JoinColumn(name = "parentId")
     private Node parent;
 
     public Cell() {

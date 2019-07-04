@@ -5,9 +5,6 @@ import com.igor.ns.ejb.NodeDAO;
 import com.igor.ns.entity.Cell;
 import com.igor.ns.entity.Node;
 import com.igor.ns.exception.NetworkConfigurationServiceException;
-import com.igor.ns.interceptor.PersistenceValidator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.ejb.Singleton;
 import javax.inject.Inject;
@@ -15,12 +12,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
-import java.util.Set;
 
 @Singleton
 public class NodeController implements NodeDAO {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(NodeController.class);
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -42,7 +36,6 @@ public class NodeController implements NodeDAO {
     }
 
     @Override
-    @PersistenceValidator
     public void persistNode(final Node node) throws NetworkConfigurationServiceException {
         entityManager.persist(node);
     }

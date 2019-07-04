@@ -3,12 +3,14 @@ package com.igor.ns.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "Nodes", schema = "Network")
+@XmlRootElement
 public class Node {
 
     @Id

@@ -6,13 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="NetworkConfigurationService-ejb" />
-        <module name="testsuite" />
-        <module name="NetworkConfigurationService-ejb-api" />
         <module name="NetworkConfigurationService-ear" />
-        <module name="NetworkConfigurationService-web" />
+        <module name="NetworkConfigurationService-ejb" />
+        <module name="NetworkConfigurationService-ejb-api" />
         <module name="NetworkConfigurationService-jpa" />
+        <module name="NetworkConfigurationService-web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="testsuite" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
