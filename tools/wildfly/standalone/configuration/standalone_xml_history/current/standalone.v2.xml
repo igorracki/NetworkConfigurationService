@@ -546,7 +546,7 @@
     </socket-binding-group>
     <deployments>
         <deployment name="NetworkConfigurationService-ear.ear" runtime-name="NetworkConfigurationService-ear.ear">
-            <content sha1="3b9832a9d8eda148936a794e11f5ea9dc360ba09"/>
+            <content sha1="10dff743ca34f1ab019dbb4e57b0f4d2747fbd9a"/>
         </deployment>
     </deployments>
 </server>

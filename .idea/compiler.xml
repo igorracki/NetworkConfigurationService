@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NetworkConfigurationService-ear" />
-        <module name="NetworkConfigurationService-ejb" />
         <module name="NetworkConfigurationService-ejb-api" />
+        <module name="NetworkConfigurationService-ejb" />
         <module name="NetworkConfigurationService-jpa" />
         <module name="NetworkConfigurationService-web" />
       </profile>

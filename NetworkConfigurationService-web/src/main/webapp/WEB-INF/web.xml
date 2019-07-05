@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <security-role>
+        <role-name>Manager</role-name>
+    </security-role>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Vendor operations</web-resource-name>
+            <url-pattern>/nodes/add</url-pattern>
+            <url-pattern>/cells/add</url-pattern>
+            <url-pattern>/nodes/delete/{id}</url-pattern>
+            <url-pattern>/cells/delete/{id}</url-pattern>
+            <url-pattern>/nodes/cells/add/</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>ManagementRealm</realm-name>
+    </login-config>
+</web-app>

@@ -3,6 +3,7 @@ package com.igor.ns.persistence;
 import com.igor.ns.ejb.CellDAO;
 import com.igor.ns.entity.Cell;
 import com.igor.ns.exception.NetworkConfigurationServiceException;
+import com.igor.ns.interceptor.PersistenceValidator;
 
 import javax.ejb.Singleton;
 import javax.inject.Inject;
@@ -26,6 +27,7 @@ public class CellController implements CellDAO {
     }
 
     @Override
+    @PersistenceValidator
     public void persistCell(final Cell cell) throws NetworkConfigurationServiceException {
         cellPersistence.persist(cell);
     }

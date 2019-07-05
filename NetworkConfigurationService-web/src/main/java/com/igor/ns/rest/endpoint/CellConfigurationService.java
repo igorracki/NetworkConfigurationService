@@ -3,6 +3,8 @@ package com.igor.ns.rest.endpoint;
 import com.igor.ns.ejb.CellDAO;
 import com.igor.ns.entity.Cell;
 
+import javax.annotation.security.DeclareRoles;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -13,6 +15,7 @@ import static javax.ws.rs.core.Response.Status.CREATED;
 
 @Path("/cells")
 @Produces(APPLICATION_JSON)
+@DeclareRoles("Manager")
 public class CellConfigurationService {
 
     @Inject
@@ -27,6 +30,7 @@ public class CellConfigurationService {
 
     @POST
     @Path("/add")
+    @RolesAllowed("Manager")
     public Response createCell(final Cell cell) {
         cellDAO.persistCell(cell);
         return Response.status(CREATED).entity(cell).build();
@@ -41,6 +45,7 @@ public class CellConfigurationService {
 
     @DELETE
     @Path("/delete/{id}")
+    @RolesAllowed("Manager")
     public Response deleteCell(@PathParam("id") final long id) {
         cellDAO.delete(id);
         return Response.ok().build();

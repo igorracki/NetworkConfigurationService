@@ -4,6 +4,8 @@ import com.igor.ns.ejb.NodeDAO;
 import com.igor.ns.entity.Node;
 import com.igor.ns.rest.utility.CellsForNode;
 
+import javax.annotation.security.DeclareRoles;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -15,6 +17,7 @@ import static javax.ws.rs.core.Response.Status.CREATED;
 @Path("/nodes")
 @Produces(APPLICATION_JSON)
 @Consumes(APPLICATION_JSON)
+@DeclareRoles("Manager")
 public class NodeConfigurationService {
 
     @Inject
@@ -34,6 +37,7 @@ public class NodeConfigurationService {
 
     @POST
     @Path("/add")
+    @RolesAllowed("Manager")
     public Response createNode(final Node node) {
         nodeDAO.persistNode(node);
         return Response.status(CREATED).entity(node).build();
@@ -48,6 +52,7 @@ public class NodeConfigurationService {
 
     @DELETE
     @Path("/delete/{id}")
+    @RolesAllowed("Manager")
     public Response deleteNode(@PathParam("id") final long id) {
         nodeDAO.delete(id);
         return Response.ok().build();
@@ -55,6 +60,7 @@ public class NodeConfigurationService {
 
     @POST
     @Path("/cells/add/")
+    @RolesAllowed("Manager")
     public Response addCellsToNode(final CellsForNode cellsForNode) {
         nodeDAO.addCellsToNode(cellsForNode.getNodeId(), cellsForNode.getCellIds());
         return Response.ok().build();

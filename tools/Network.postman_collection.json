@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c0440ec4-fa39-4f3f-9556-8b320f737fc2",
+		"_postman_id": "2d2f31d6-6cc4-460c-8dc2-dfe34ad29039",
 		"name": "Network",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -10,6 +10,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:8080/NetworkConfigurationService-web/nodes/list",
 					"protocol": "http",
@@ -27,8 +31,23 @@
 			"response": []
 		},
 		{
-			"name": "Add Node",
+			"name": "Add Node (Auth)",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -59,8 +78,23 @@
 			"response": []
 		},
 		{
-			"name": "Add Cell",
+			"name": "Add Cell (Auth)",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -91,8 +125,23 @@
 			"response": []
 		},
 		{
-			"name": "Add Cells to Node",
+			"name": "Add Cells to Node (Auth)",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -118,6 +167,54 @@
 						"nodes",
 						"cells",
 						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Node by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/NetworkConfigurationService-web/nodes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"NetworkConfigurationService-web",
+						"nodes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cell by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/NetworkConfigurationService-web/cells/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"NetworkConfigurationService-web",
+						"cells",
+						"1"
 					]
 				}
 			},
