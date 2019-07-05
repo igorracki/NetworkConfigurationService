@@ -2,7 +2,8 @@
 JEE7 and WildFly 15 Project
 
 ## How to Run
-It is recommended to use the provided version of Wildfly included inside tools/ __
+It is recommended to use the provided version of Wildfly included inside tools/
+<br />
 The pom.xml is also configured to deploy the project to that specific Wildfly.
 
 ### Run Wildfly
